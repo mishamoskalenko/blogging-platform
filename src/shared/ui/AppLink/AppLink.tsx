@@ -24,6 +24,7 @@ export const AppLink: FC<AppLinkProps> = (props) => {
             {...otherProps}
         >
             {children}
+            Hiu
         </Link>
     );
 };
