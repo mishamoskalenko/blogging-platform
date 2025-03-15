@@ -2,8 +2,8 @@
     "Main": "Principal",
     "About": "D'accueil",
     "Language": "Français",
+    "Short Language": "Fr",
     "Page not found": " Page non trouvée",
     "Something went wrong": "Quelque chose a mal tourné",
-    "Reload page": "Recharger la page",
-    "Switch": "Interrupteur"
+    "Reload page": "Recharger la page"
 }
