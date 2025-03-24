@@ -5,5 +5,7 @@
     "Short Language": "Fr",
     "Page not found": " Page non trouvée",
     "Something went wrong": "Quelque chose a mal tourné",
-    "Reload page": "Recharger la page"
+    "Reload page": "Recharger la page",
+    "increment": "incrémenter",
+    "decrement": "décrémenter"
 }
