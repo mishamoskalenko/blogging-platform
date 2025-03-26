@@ -3,9 +3,12 @@
     "About": "D'accueil",
     "Language": "Français",
     "Short Language": "Fr",
-    "Page not found": " Page non trouvée",
+    "Page not found": "Page non trouvée",
     "Something went wrong": "Quelque chose a mal tourné",
     "Reload page": "Recharger la page",
     "increment": "incrémenter",
-    "decrement": "décrémenter"
+    "decrement": "décrémenter",
+    "Login": "Connexion",
+    "Enter username": "Entrer l'identifiant",
+    "Enter password": "Entrer le mot de passe"
 }
