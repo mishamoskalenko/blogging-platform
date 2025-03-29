@@ -10,5 +10,7 @@
     "decrement": "décrémenter",
     "Login": "Connexion",
     "Enter username": "Entrer l'identifiant",
-    "Enter password": "Entrer le mot de passe"
+    "Enter password": "Entrer le mot de passe",
+    "Authorisation form": "Formulaire d'autorisation",
+    "You have entered an incorrect username or password": "Vous avez saisi un nom d'utilisateur ou un mot de passe incorrect"
 }
