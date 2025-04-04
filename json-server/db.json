@@ -24,7 +24,14 @@
     }
   ],
   "profile": {
-    "name": "typicode"
+    "first": "Andrew",
+    "lastname": "John",
+    "age": 22,
+    "currency": "EUR",
+    "country": "France",
+    "city": "Paris",
+    "username": "admin",
+    "avatar": "https://i.ibb.co/B52J0x4K/image.png"
   },
   "users": [
     {
