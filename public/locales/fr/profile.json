@@ -1,4 +1,10 @@
 {
     "Profile page": "Page de profil",
-    "Profile": "Profile"
+    "Profile": "Profil",
+    "Cancel": "Annuler",
+    "Your name": "Votre nom",
+    "Your surname": "Votre nom de famille",
+    "Edit": "Editer",
+    "An error occurred while loading the profile": "Une erreur s'est produite lors du chargement du profil",
+    "Try refresh the page": "Essayez de rafraîchir la page"
 }
