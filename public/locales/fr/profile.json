@@ -4,7 +4,15 @@
     "Cancel": "Annuler",
     "Your name": "Votre nom",
     "Your surname": "Votre nom de famille",
+    "Your age": "Votre âge",
+    "Your city": "Votre ville",
+    "Your username": "Votre nom d'utilisateur ",
+    "Your avatar link": "Le lien de votre avatar ",
     "Edit": "Editer",
     "An error occurred while loading the profile": "Une erreur s'est produite lors du chargement du profil",
-    "Try refresh the page": "Essayez de rafraîchir la page"
+    "Try refresh the page": "Essayez de rafraîchir la page",
+    "User data is incorrect. Please provide both first name and last name.": "Les données de l'utilisateur sont incorrectes. Veuillez indiquer le prénom et le nom de famille.",
+    "Age is incorrect. Please provide a valid age.": "L'âge est incorrect. Veuillez fournir un âge valide.",
+    "No data provided.": "Aucune donnée n'a été fournie.",
+    "A server error occurred. Please try again later.": "Une erreur de serveur s'est produite. Veuillez réessayer plus tard."
 }
