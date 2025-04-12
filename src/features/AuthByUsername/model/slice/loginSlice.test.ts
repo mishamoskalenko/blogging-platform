@@ -1,7 +1,7 @@
 import { LoginSchema } from '../types/loginSchema';
 import { loginActions, loginReducer } from './loginSlice';
 
-describe('loginByUsername.test', () => {
+describe('loginSlice.test', () => {
     test('test set username', async () => {
         const state: DeepPartial<LoginSchema> = {
             username: 'admin',
