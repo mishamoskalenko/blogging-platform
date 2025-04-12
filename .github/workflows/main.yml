@@ -15,10 +15,6 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: install modules
         run: npm install
-      - name: Remove old Loki screenshots (once)
-        run: rm -rf .loki/reference
-      - name: Update Loki screenshots (one time)
-        run: npx loki update
       - name: build production project
         run: npm run build:prod
         if: always()
