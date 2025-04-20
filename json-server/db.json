@@ -46,13 +46,15 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "role": "ADMIN"
+      "role": "ADMIN",
+      "avatar": "https://i.ibb.co/B52J0x4K/image.png"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
-      "role": "USER"
+      "role": "USER",
+      "avatar": "https://i.ibb.co/B52J0x4K/image.png"
     }
   ],
   "articles": [
