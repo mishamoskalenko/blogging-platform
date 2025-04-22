@@ -2,6 +2,7 @@
     "Main": "Main",
     "About": "About",
     "Profile": "Profile",
+    "Articles": "Articles",
     "Language": "English",
     "Logout": "Logout",
     "Short Language": "En",
@@ -16,5 +17,7 @@
     "Authorisation form": "Authorisation form",
     "You have entered an incorrect username or password": "You have entered an incorrect username or password",
     "Enter currency": "Enter currency",
-    "Enter country": "Enter country"
+    "Enter country": "Enter country",
+    "Enter text comment": "Enter text comment",
+    "Send": "Send"
 }

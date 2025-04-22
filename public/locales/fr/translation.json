@@ -2,6 +2,7 @@
     "Main": "Principal",
     "About": "D'accueil",
     "Profile": "Profil",
+    "Articles": "Articles",
     "Language": "Français",
     "Logout": "Déconnexion",
     "Short Language": "Fr",
@@ -17,5 +18,7 @@
     "You have entered an incorrect username or password": "Vous avez saisi un nom d'utilisateur ou un mot de passe incorrect",
     "Enter currency": "Saisir la devise",
     "Enter country": "Saisir le pays",
-    "Save": "Enregistrer"
+    "Save": "Enregistrer",
+    "Enter text comment": "Saisir le texte du commentaire",
+    "Send": "Envoyer"
 }

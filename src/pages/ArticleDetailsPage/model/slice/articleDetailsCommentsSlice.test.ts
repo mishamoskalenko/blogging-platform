@@ -1,6 +1,6 @@
-import { fetchCommentsByArticleId } from '../services/fetchCommentsByArticleId';
+import { fetchCommentsByArticleId } from '../services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { ArticleDetailsCommentsSchema } from '../types/ArticleDetailsCommentsSchema';
-import { articleDetailsCommentsReducer, commentsAdapter } from './articleDetailsCommentsSlice';
+import { articleDetailsCommentsReducer } from './articleDetailsCommentsSlice';
 
 describe('articleDetailsCommentsSlice.test', () => {
     test('test fetch comments by article id', async () => {

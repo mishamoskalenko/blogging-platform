@@ -29,18 +29,38 @@
       "text": "a comment about post 3",
       "articleId": "1",
       "userId": "1"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "hello!",
+      "id": "OTPLxJD"
     }
   ],
-  "profile": {
-    "first": "Andrew",
-    "lastname": "Johns",
-    "age": 22,
-    "currency": "EUR",
-    "country": "France",
-    "city": "Paris",
-    "username": "admin",
-    "avatar": "https://i.ibb.co/B52J0x4K/image.png"
-  },
+  "profile": [
+    {
+      "id": "1",
+      "first": "Andrew",
+      "lastname": "Johns",
+      "age": 22,
+      "currency": "EUR",
+      "country": "France",
+      "city": "Paris",
+      "username": "admin",
+      "avatar": "https://i.ibb.co/B52J0x4K/image.png"
+    },
+    {
+      "id": "2",
+      "first": "John",
+      "lastname": "Smith",
+      "age": 35,
+      "currency": "UAH",
+      "country": "Ukraine",
+      "city": "Kyiv",
+      "username": "user19815",
+      "avatar": "https://cdn1.iconfinder.com/data/icons/user-pictures/100/male3-1024.png"
+    }
+  ],
   "users": [
     {
       "id": "1",
