@@ -11,6 +11,10 @@ const data = {
     views: 152,
     createdAt: '19.04.2025',
     type: [ArticleType.IT, ArticleType.SCIENCE],
+    user: {
+        id: '1',
+        username: 'admin',
+    },
     blocks: [
         {
             id: '1',
