@@ -12,7 +12,7 @@ const data = [
     },
 ];
 
-describe('fetchCommentsByArticleId.test.test', () => {
+describe('fetchCommentsByArticleId.test', () => {
     test('success', async () => {
         const thunk = new TestAsyncThunk(fetchCommentsByArticleId);
         thunk.api.get.mockReturnValue(Promise.resolve({ data }));
