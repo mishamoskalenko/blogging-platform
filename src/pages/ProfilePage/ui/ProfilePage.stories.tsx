@@ -2,7 +2,6 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator';
-import AvatarImg from 'shared/assets/tests/storybook.png';
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
 import ProfilePage from './ProfilePage';

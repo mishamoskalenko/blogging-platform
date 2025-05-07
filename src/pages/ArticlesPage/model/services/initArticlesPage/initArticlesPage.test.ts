@@ -12,7 +12,7 @@ describe('initArticlesPage.test', () => {
                 _inited: false,
             },
         });
-        await thunk.callThunk();
+        await thunk.callThunk(new URLSearchParams('?order=asc'));
 
         expect(thunk.dispatch).toHaveBeenCalledWith(articlesPageActions.initState());
         expect(fetchArticlesList).toHaveBeenCalledWith({ page: 1 });
@@ -25,7 +25,7 @@ describe('initArticlesPage.test', () => {
             },
         });
 
-        await thunk.callThunk();
+        await thunk.callThunk(new URLSearchParams('?order=asc'));
 
         expect(thunk.dispatch).not.toHaveBeenCalledWith(articlesPageActions.initState());
         expect(fetchArticlesList).not.toHaveBeenCalled();

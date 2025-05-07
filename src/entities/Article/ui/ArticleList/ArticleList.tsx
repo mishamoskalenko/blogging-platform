@@ -1,6 +1,8 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { memo } from 'react';
 import { Article, ArticleView } from 'entities/Article';
+import { Text, TextAlign, TextTheme } from 'shared/ui/Text/Text';
+import { useTranslation } from 'react-i18next';
 import cls from './ArticleList.module.scss';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
@@ -24,10 +26,17 @@ export const ArticleList = memo((props: ArticleListProps) => {
     const {
         className, articles, isLoading, view = ArticleView.SMALL,
     } = props;
+    const { t } = useTranslation();
 
     const renderArticle = (article: Article) => (
         <ArticleListItem key={article.id} className={cls.card} article={article} view={view} />
     );
+
+    if (!isLoading && !articles.length) {
+        return (
+            <Text title={t('No articles found')} align={TextAlign.CENTER} theme={TextTheme.ERROR} />
+        );
+    }
 
     return (
         <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
