@@ -1,5 +1,5 @@
-import { fetchCommentsByArticleId } from '../services/fetchCommentsByArticleId/fetchCommentsByArticleId';
-import { ArticleDetailsCommentsSchema } from '../types/ArticleDetailsCommentsSchema';
+import { fetchCommentsByArticleId } from '../../services/fetchCommentsByArticleId/fetchCommentsByArticleId';
+import { ArticleDetailsCommentsSchema } from '../../types/ArticleDetailsCommentsSchema';
 import { articleDetailsCommentsReducer } from './articleDetailsCommentsSlice';
 
 describe('articleDetailsCommentsSlice.test', () => {
