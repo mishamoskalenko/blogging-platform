@@ -1,4 +1,4 @@
-import { getAricleDetailsData, getAricleDetailsError, getAricleDetailsIsLoading } from 'entities/Article/model/selectors/articleDetails';
+import { getArticleDetailsData, getArticleDetailsError, getArticleDetailsIsLoading } from 'entities/Article/model/selectors/articleDetails';
 import { fetchArticleById } from 'entities/Article/model/services/fetchArticleById/fetchArticleById';
 import { articleDetailsReducer } from 'entities/Article/model/slice/articleDetailsSlice';
 import { memo, useCallback, useEffect } from 'react';
@@ -32,9 +32,9 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     const { className, id } = props;
     const { t } = useTranslation('article-details');
     const dispatch = useAppDispatch();
-    const isLoading = useSelector(getAricleDetailsIsLoading);
-    const article = useSelector(getAricleDetailsData);
-    const error = useSelector(getAricleDetailsError);
+    const isLoading = useSelector(getArticleDetailsIsLoading);
+    const article = useSelector(getArticleDetailsData);
+    const error = useSelector(getArticleDetailsError);
 
     const renderBlock = useCallback((block: ArticleBlock) => {
         switch (block.type) {

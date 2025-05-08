@@ -1,5 +1,5 @@
 import { StateSchema } from 'app/providers/StoreProvider';
-import { getAricleDetailsData, getAricleDetailsError, getAricleDetailsIsLoading } from './articleDetails';
+import { getArticleDetailsData, getArticleDetailsError, getArticleDetailsIsLoading } from './articleDetails';
 
 describe('articleDetails.test', () => {
     test('should return data', () => {
@@ -12,12 +12,12 @@ describe('articleDetails.test', () => {
                 data,
             },
         };
-        expect(getAricleDetailsData(state as StateSchema)).toEqual(data);
+        expect(getArticleDetailsData(state as StateSchema)).toEqual(data);
     });
 
     test('should work with empty state', () => {
         const state: DeepPartial<StateSchema> = {};
-        expect(getAricleDetailsData(state as StateSchema)).toEqual(undefined);
+        expect(getArticleDetailsData(state as StateSchema)).toEqual(undefined);
     });
 
     test('should return isLoading', () => {
@@ -26,12 +26,12 @@ describe('articleDetails.test', () => {
                 isLoading: true,
             },
         };
-        expect(getAricleDetailsIsLoading(state as StateSchema)).toEqual(true);
+        expect(getArticleDetailsIsLoading(state as StateSchema)).toEqual(true);
     });
 
     test('should work with empty state', () => {
         const state: DeepPartial<StateSchema> = {};
-        expect(getAricleDetailsIsLoading(state as StateSchema)).toEqual(false);
+        expect(getArticleDetailsIsLoading(state as StateSchema)).toEqual(false);
     });
 
     test('should return error', () => {
@@ -40,11 +40,11 @@ describe('articleDetails.test', () => {
                 error: 'error',
             },
         };
-        expect(getAricleDetailsError(state as StateSchema)).toEqual('error');
+        expect(getArticleDetailsError(state as StateSchema)).toEqual('error');
     });
 
     test('should work with empty state', () => {
         const state: DeepPartial<StateSchema> = {};
-        expect(getAricleDetailsError(state as StateSchema)).toEqual(undefined);
+        expect(getArticleDetailsError(state as StateSchema)).toEqual(undefined);
     });
 });

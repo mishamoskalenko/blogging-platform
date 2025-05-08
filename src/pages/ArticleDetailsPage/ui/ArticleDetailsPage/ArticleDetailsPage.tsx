@@ -22,6 +22,7 @@ import { getArticleRecommendationsIsLoading } from 'pages/ArticleDetailsPage/mod
 import { fetchArticleRecommendations } from 'pages/ArticleDetailsPage/model/services/fetchArticleRecommendations/fetchArticleRecommendations';
 import { articleDetailsPageReducer } from 'pages/ArticleDetailsPage/model/slice';
 import cls from './ArticleDetailsPage.module.scss';
+import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 
 interface ArticleDetailsPageProps {
     className?: string;
@@ -39,7 +40,6 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
     const recommendations = useSelector(getArticleRecommendations.selectAll);
     const recommendationsIsLoading = useSelector(getArticleRecommendationsIsLoading);
     const dispatch = useAppDispatch();
-    const navigate = useNavigate();
 
     useInitialEffect(() => {
         dispatch(fetchCommentsByArticleId(id));
@@ -49,10 +49,6 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
     const onSendComment = useCallback((text: string) => {
         dispatch(addCommentForArticle(text));
     }, [dispatch]);
-
-    const onBackToggle = useCallback(() => {
-        navigate(RoutePath.articles);
-    }, [navigate]);
 
     if (!id) {
         return (
@@ -65,9 +61,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
             <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
-                <Button theme={ButtonTheme.OUTLINE} onClick={onBackToggle}>
-                    {t('Back to list')}
-                </Button>
+                <ArticleDetailsPageHeader />
                 <ArticleDetails id={id} />
                 <Text size={TextSize.L} className={cls.commentTitle} title={t('Recommendations')} />
                 <ArticleList className={cls.recommendations} articles={recommendations} isLoading={recommendationsIsLoading} target="_blank" />

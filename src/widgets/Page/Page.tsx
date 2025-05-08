@@ -1,6 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import {
-    memo, MutableRefObject, ReactNode, UIEvent, useRef,
+    memo, MutableRefObject, ReactNode, UIEvent, useEffect, useRef,
 } from 'react';
 import { useInfiniteScroll } from 'shared/lib/hooks/useInfiniteScroll/useInfiniteScroll';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
@@ -28,6 +28,16 @@ export const Page = memo((props: PageProps) => {
         (state: StateSchema) => getScrollSaveByPath(state, pathname),
     );
     const dispatch = useAppDispatch();
+
+    useEffect(() => {
+        const wrapper = wrapperRef.current;
+        if (wrapper && onScrollEnd) {
+            const needsLoading = wrapper.scrollHeight <= wrapper.clientHeight;
+            if (needsLoading) {
+                onScrollEnd();
+            }
+        }
+    }, [children, onScrollEnd]);
 
     useInfiniteScroll({
         triggerRef,
