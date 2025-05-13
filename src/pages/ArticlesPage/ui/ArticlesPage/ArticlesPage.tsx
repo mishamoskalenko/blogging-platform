@@ -1,10 +1,4 @@
 import { ArticleList } from 'entities/Article';
-import {
-    getArticlesPageError, getArticlesPageIsLoading, getArticlesPageView,
-} from 'pages/ArticlesPage/model/selectors/articlesPageSelectors';
-import { fetchNextArticlesPage } from 'pages/ArticlesPage/model/services/fetchNextArticlesPage/fetchNextArticlesPage';
-import { initArticlesPage } from 'pages/ArticlesPage/model/services/initArticlesPage/initArticlesPage';
-import { articlesPageReducer, getArticles } from 'pages/ArticlesPage/model/slice/articlesPageSlice';
 import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames/classNames';
@@ -14,6 +8,13 @@ import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEf
 import { Page } from 'widgets/Page/Page';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { useSearchParams } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import { articlesPageReducer, getArticles } from '../../model/slice/articlesPageSlice';
+import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
+import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
+import {
+    getArticlesPageError, getArticlesPageIsLoading, getArticlesPageView,
+} from '../../model/selectors/articlesPageSelectors';
 import cls from './ArticlesPage.module.scss';
 import { ArticlesPageFilters } from '../ArticlesPageFilters/ArticlesPageFilters';
 
@@ -26,6 +27,7 @@ const reducers: ReducersList = {
 };
 
 const ArticlesPage = ({ className }: ArticlesPageProps) => {
+    const { t } = useTranslation('articles');
     const dispatch = useAppDispatch();
     const articles = useSelector(getArticles.selectAll);
     const isLoading = useSelector(getArticlesPageIsLoading);
@@ -43,7 +45,7 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
 
     if (error) {
         return (
-            <Text title="Error has occured" theme={TextTheme.ERROR} />
+            <Text title={t('Error has occured')} theme={TextTheme.ERROR} />
         );
     }
 

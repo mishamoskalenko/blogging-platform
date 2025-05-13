@@ -1,5 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { ArticleSortSelector } from 'entities/Article';
+import { ArticleSortSelector } from './ArticleSortSelector';
 
 export default {
     title: 'entities/ArticleSortSelector',
