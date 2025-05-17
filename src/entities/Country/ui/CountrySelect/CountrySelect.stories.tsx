@@ -1,5 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { CountrySelect } from './CountrySelect';
+import { Country } from '../../model/types/country';
 
 export default {
     title: 'entities/CountrySelect',
@@ -12,4 +13,6 @@ export default {
 const Template: ComponentStory<typeof CountrySelect> = (args) => <CountrySelect {...args} />;
 
 export const Primary = Template.bind({});
-Primary.args = {};
+Primary.args = {
+    value: Country.France,
+};

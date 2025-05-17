@@ -10,6 +10,9 @@ export default {
     argTypes: {
         backgroundColor: { control: 'color' },
     },
+    decorators: [
+        (Story) => <div style={{ padding: 50 }}><Story /></div>,
+    ],
 } as ComponentMeta<typeof ListBox>;
 
 const Template: ComponentStory<typeof ListBox> = (args) => <ListBox {...args} />;
@@ -20,27 +23,34 @@ const options = [
     { value: Currency.UAH, content: Currency.UAH },
 ];
 
-export const Light = Template.bind({});
-Light.args = {
+export const BottomLeft = Template.bind({});
+BottomLeft.args = {
     label: 'Enter currency',
     items: options,
     value: 'EUR',
-    direction: 'bottom',
+    direction: 'bottom left',
 };
 
-export const TopDirection = Template.bind({});
-TopDirection.args = {
+export const BottomRight = Template.bind({});
+BottomRight.args = {
     label: 'Enter currency',
     items: options,
     value: 'EUR',
-    direction: 'top',
+    direction: 'bottom right',
 };
 
-export const Readonly = Template.bind({});
-Readonly.args = {
+export const TopLeft = Template.bind({});
+TopLeft.args = {
     label: 'Enter currency',
     items: options,
     value: 'EUR',
-    direction: 'top',
-    readonly: true,
+    direction: 'top left',
+};
+
+export const TopRight = Template.bind({});
+TopRight.args = {
+    label: 'Enter currency',
+    items: options,
+    value: 'EUR',
+    direction: 'top right',
 };
