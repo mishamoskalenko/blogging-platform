@@ -5,7 +5,6 @@ import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { useParams } from 'react-router-dom';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { ProfileCard } from 'entities/Profile';
@@ -13,7 +12,6 @@ import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/Dynamic
 import { VStack } from 'shared/ui/Stack';
 import { getProfileForm } from '../../model/selectors/getProfileForm/getProfileForm';
 import { profileActions, profileReducer } from '../../model/slice/profileSlice';
-import cls from './EditableProfileCard.module.scss';
 import { getProfileValidateErrors } from '../../model/selectors/getProfileValidateErrors/getProfileValidateErrors';
 import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly';
 import { getProfileIsLoading } from '../../model/selectors/getProfileIsLoading/getProfileIsLoading';
@@ -90,7 +88,7 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
 
     return (
         <DynamicModuleLoader reducers={initialReducers}>
-            <VStack gap="8" max className={classNames(cls.EditableProfileCard, {}, [className])}>
+            <VStack gap="8" max className={classNames('', {}, [className])}>
                 <EditableProfileCardHeader />
                 {validateErrors?.length && validateErrors.map((err) => (
                     <Text key={err} theme={TextTheme.ERROR} text={validateErrorTranslates[err]} />
