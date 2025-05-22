@@ -59,6 +59,17 @@
       "city": "Kyiv",
       "username": "user19815",
       "avatar": "https://cdn1.iconfinder.com/data/icons/user-pictures/100/male3-1024.png"
+    },
+    {
+      "id": "3",
+      "first": "Olivier",
+      "lastname": "Darius",
+      "age": 35,
+      "currency": "EUR",
+      "country": "France",
+      "city": "Paris",
+      "username": "manager19815",
+      "avatar": "https://cdn-icons-png.flaticon.com/512/4205/4205906.png"
     }
   ],
   "users": [
@@ -66,15 +77,22 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "role": "ADMIN",
+      "roles": ["ADMIN"],
       "avatar": "https://i.ibb.co/B52J0x4K/image.png"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
-      "role": "USER",
+      "roles": ["USER"],
       "avatar": "https://cdn1.iconfinder.com/data/icons/user-pictures/100/male3-1024.png"
+    },
+    {
+      "id": "3",
+      "username": "manager",
+      "password": "123",
+      "roles": ["MANAGER"],
+      "avatar": "https://cdn-icons-png.flaticon.com/512/4205/4205906.png"
     }
   ],
   "articles": [
