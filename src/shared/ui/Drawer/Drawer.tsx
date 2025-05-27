@@ -1,32 +1,27 @@
-import {
-    ReactNode,
-} from 'react';
+import { useTranslation } from 'react-i18next';
 import { classNames, Mods } from 'shared/lib/classNames/classNames';
+import { memo, ReactNode } from 'react';
+import { useTheme } from 'app/providers/ThemeProvider';
 import { useModal } from 'shared/lib/hooks/useModal/useModal';
-import { Overlay } from '../Overlay/Overlay';
+import cls from './Drawer.module.scss';
 import { Portal } from '../Portal/Portal';
-import cls from './Modal.module.scss';
+import { Overlay } from '../Overlay/Overlay';
 
-interface ModalProps {
+interface DrawerProps {
     className?: string;
-    children?: ReactNode;
+    children: ReactNode;
     isOpen?: boolean;
     onClose?: () => void;
-    lazy?: boolean;
+    lazy?: boolean
 }
 
-const ANIMATION_DELAY = 200;
-
-export const Modal = (props: ModalProps) => {
+export const Drawer = memo((props: DrawerProps) => {
     const {
-        className,
-        children,
-        isOpen,
-        onClose,
-        lazy,
+        className, children, isOpen, onClose, lazy,
     } = props;
+    const { theme } = useTheme();
 
-    const { close, isClosing, isMounted } = useModal({ animationDelay: ANIMATION_DELAY, onClose, isOpen });
+    const { close, isClosing, isMounted } = useModal({ animationDelay: 300, onClose, isOpen });
 
     const mods: Mods = {
         [cls.opened]: isOpen,
@@ -39,7 +34,7 @@ export const Modal = (props: ModalProps) => {
 
     return (
         <Portal>
-            <div className={classNames(cls.Modal, mods, [className])}>
+            <div className={classNames(cls.Drawer, mods, [className, theme, 'app_drawer'])}>
                 <Overlay onClick={close} />
                 <div className={cls.content}>
                     {children}
@@ -47,4 +42,4 @@ export const Modal = (props: ModalProps) => {
             </div>
         </Portal>
     );
-};
+});
