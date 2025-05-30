@@ -99,3 +99,9 @@ Disabled.args = {
     theme: ButtonTheme.OUTLINE,
     disabled: true,
 };
+
+export const FullWidth = Template.bind({});
+FullWidth.args = {
+    children: 'Text',
+    fullWidth: true,
+};
