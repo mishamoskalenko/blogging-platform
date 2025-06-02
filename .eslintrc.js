@@ -52,6 +52,13 @@ module.exports = {
         'no-undef': 'off',
         'react/no-array-index-key': 'off',
         'eslint-path-plugin/path-checker': ['error', { alias: '@' }],
+        'eslint-path-plugin/public-api-imports': [
+            'error',
+            {
+                alias: '@',
+                testFilesPatterns: ['**/*.test.*', '**/*.story.*', '**/StoreDecorator.tsx'],
+            },
+        ],
     },
     globals: {
         __IS_DEV__: true,

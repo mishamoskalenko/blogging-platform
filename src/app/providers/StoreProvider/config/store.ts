@@ -1,13 +1,14 @@
 import {
     CombinedState, configureStore, getDefaultMiddleware, Reducer, ReducersMapObject,
 } from '@reduxjs/toolkit';
-import { counterReducer } from '@/entities/Counter/model/slice/counterSlice';
+
 import { userReducer } from '@/entities/User';
 import { scrollReducer } from '@/features/scrollSave';
 import { $api } from '@/shared/api/api';
 import { rtkApi } from '@/shared/api/rtkApi';
 import { createReducerManager } from './reducerManager';
 import { StateSchema, ThunkExtraArg } from './StateSchema';
+import { counterReducer } from '@/entities/Counter';
 
 export function createReduxStore(initialState?: StateSchema, asyncReducers?: ReducersMapObject<StateSchema>) {
     const rootReducers: ReducersMapObject<StateSchema> = {
