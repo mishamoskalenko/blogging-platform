@@ -3,7 +3,7 @@ import { ArticleViewSelector } from './ArticleViewSelector';
 import { ArticleSortSelector } from '../ArticleSortSelector/ArticleSortSelector';
 
 export default {
-    title: 'entities/ArticleViewSelector',
+    title: 'entities/Article/ArticleViewSelector',
     component: ArticleSortSelector,
     argTypes: {
         backgroundColor: { control: 'color' },

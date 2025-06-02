@@ -31,9 +31,11 @@ const articleRatings = [
     },
 ];
 
-export const Normal = Template.bind({});
-Normal.args = {};
-Normal.decorators = [
+export const WithRate = Template.bind({});
+WithRate.args = {
+    articleId: '1',
+};
+WithRate.decorators = [
     StoreDecorator({
         user: {
             authData: {
@@ -43,10 +45,10 @@ Normal.decorators = [
         },
     }),
 ];
-Normal.parameters = {
+WithRate.parameters = {
     mockData: [
         {
-            url: `${__API__}/article-ratings?userId=1`,
+            url: `${__API__}/article-ratings?userId=1&articleId=1`,
             method: 'GET',
             status: 200,
             response: articleRatings,
@@ -56,6 +58,31 @@ Normal.parameters = {
             method: 'POST',
             status: 200,
             response: { success: true },
+        },
+    ],
+};
+
+export const WithoutRate = Template.bind({});
+WithoutRate.args = {
+    articleId: '1',
+};
+WithoutRate.decorators = [
+    StoreDecorator({
+        user: {
+            authData: {
+                id: '1',
+                username: 'testuser',
+            },
+        },
+    }),
+];
+WithoutRate.parameters = {
+    mockData: [
+        {
+            url: `${__API__}/article-ratings?userId=1&articleId=1`,
+            method: 'GET',
+            status: 200,
+            response: [],
         },
     ],
 };
