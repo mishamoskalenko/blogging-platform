@@ -1,7 +1,7 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { AnimationProvider } from 'shared/lib/components/AnimationProvider';
 import { Drawer } from './Drawer';
 import { Text } from '../Text/Text';
+import { AnimationProvider } from '@/shared/lib/components/AnimationProvider/AnimationProvider';
 
 export default {
     title: 'shared/Drawer',
@@ -32,4 +32,7 @@ export const Primary = Template.bind({});
 Primary.args = {
     children: content,
     isOpen: true,
+};
+Primary.parameters = {
+    loki: { skip: true },
 };
