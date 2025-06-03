@@ -4,7 +4,7 @@ import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator';
 import { AvatarDropdown } from './AvatarDropdown';
 
 export default {
-    title: 'features/AvatarDropdown',
+    title: 'features/AvatarDropdownn',
     component: AvatarDropdown,
     argTypes: {
         backgroundColor: { control: 'color' },
