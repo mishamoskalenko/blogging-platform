@@ -1,4 +1,3 @@
-import { action } from '@storybook/addon-actions';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Flex } from './Flex';
 

@@ -1,7 +1,6 @@
-import { memo, useCallback } from 'react';
-import { useTranslation } from 'react-i18next';
+import { memo } from 'react';
 import { useParams } from 'react-router-dom';
-import { ArticleDetails, ArticleList } from '@/entities/Article';
+import { ArticleDetails } from '@/entities/Article';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { ArticleRecommendationsList } from '@/features/articleRecommendationsList';
