@@ -7,7 +7,7 @@ import {
 import { LoginModal } from '@/features/AuthByUsername';
 import { AvatarDropdown } from '@/features/avatarDropdown';
 import { NotificationButton } from '@/features/notificationButton';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteArticleCreate } from '@/shared/const/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
@@ -35,7 +35,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
         return (
             <header className={classNames(cls.Navbar, {}, [className])}>
                 <Text className={cls.appName} theme={TextTheme.INVERTED} title={t('Blogging platform')} />
-                <AppLink className={cls.createBtn} to={RoutePath.article_create} theme={AppLinkTheme.SECONDARY}>
+                <AppLink className={cls.createBtn} to={getRouteArticleCreate()} theme={AppLinkTheme.SECONDARY}>
                     {t('Create new article')}
                 </AppLink>
                 <HStack gap="16" className={cls.actions}>
