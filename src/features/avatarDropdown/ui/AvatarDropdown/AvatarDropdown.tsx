@@ -48,7 +48,7 @@ export const AvatarDropdown = memo(({ className }: AvatarDropdownProps) => {
                 },
             ]}
             direction="bottom left"
-            trigger={<Avatar size={30} src={authData.avatar} />}
+            trigger={<Avatar size={30} src={authData.avatar} fallbackInverted alt="avatar" />}
         />
     );
 });
