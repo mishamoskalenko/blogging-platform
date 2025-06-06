@@ -47,7 +47,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: Install dependencies
-        run: npm ci --force
+        run: npm ci
       - name: Build production project
         run: npm run build:prod
       - name: Build storybook
@@ -56,20 +56,26 @@ jobs:
         run: npm run test:ui:ci
       - name: Run unit tests
         run: npm run test:unit
+        if: always()
       - name: Generate HTML report
         run: npm run test:ui:report
+        if: always()
       - name: move loki
         run: mv .loki reports/
+        if: always()
       - name: Setup Pages
         uses: actions/configure-pages@v5
+        if: always()
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: 'reports'
           name: 'github-pages' 
+        if: always()
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        if: always()
 
   checks-linting:
     runs-on: ubuntu-latest
