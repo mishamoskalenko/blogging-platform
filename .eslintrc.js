@@ -81,5 +81,13 @@ module.exports = {
                 'i18next/no-literal-string': 'off',
             },
         },
+        {
+            files: ['cypress/support/commands/login.ts'],
+            rules: {
+                'eslint-path-plugin/path-checker': 'off',
+                'eslint-path-plugin/public-api-imports': 'off',
+                'eslint-path-plugin/layer-imports': 'off',
+            },
+        },
     ],
 };

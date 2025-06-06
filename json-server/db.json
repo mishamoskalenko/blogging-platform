@@ -133,6 +133,15 @@
         "MANAGER"
       ],
       "avatar": "https://cdn-icons-png.flaticon.com/512/4205/4205906.png"
+    },
+    {
+      "id": "4",
+      "username": "testuser",
+      "password": "123",
+      "roles": [
+        "ADMIN"
+      ],
+      "avatar": "https://i.ibb.co/B52J0x4K/image.png"
     }
   ],
   "articles": [
