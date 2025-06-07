@@ -68,7 +68,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
     }
 
     return (
-        <div className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}>
+        <div className={classNames(cls.ArticleListItem, {}, [className, cls[view]])} data-testid="ArticleListItem">
             <AppLink target={target} to={getRouteArticleDetails(article.id)}>
                 <Card className={cls.card}>
                     <div className={cls.imageWrapper}>

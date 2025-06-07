@@ -82,7 +82,7 @@ module.exports = {
             },
         },
         {
-            files: ['cypress/support/commands/login.ts'],
+            files: ['cypress/support/**/*.ts'],
             rules: {
                 'eslint-path-plugin/path-checker': 'off',
                 'eslint-path-plugin/public-api-imports': 'off',

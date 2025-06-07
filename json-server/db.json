@@ -104,6 +104,17 @@
       "city": "Paris",
       "username": "manager19815",
       "avatar": "https://cdn-icons-png.flaticon.com/512/4205/4205906.png"
+    },
+    {
+      "id": "4",
+      "first": "Test",
+      "lastname": "User",
+      "age": 35,
+      "currency": "EUR",
+      "country": "France",
+      "city": "Paris",
+      "username": "testuser1",
+      "avatar": "https://i.ibb.co/B52J0x4K/image.png"
     }
   ],
   "users": [

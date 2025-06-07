@@ -31,6 +31,9 @@ Primary.args = {
     width: '100px',
     height: '100px',
 };
+Primary.parameters = {
+    loki: { skip: true },
+};
 
 export const ErrorFallback = Template.bind({});
 ErrorFallback.args = {

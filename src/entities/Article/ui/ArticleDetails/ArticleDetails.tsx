@@ -74,7 +74,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
         );
     } else {
         content = (
-            <>
+            <div data-testid="ArticleDetails.Info">
                 <div className={cls.avatarWrapper}>
                     <Avatar
                         size={200}
@@ -97,7 +97,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
                     <Text text={article?.createdAt} />
                 </div>
                 {article?.blocks.map(renderBlock)}
-            </>
+            </div>
         );
     }
 
