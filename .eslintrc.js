@@ -81,13 +81,5 @@ module.exports = {
                 'i18next/no-literal-string': 'off',
             },
         },
-        {
-            files: ['cypress/support/**/*.ts'],
-            rules: {
-                'eslint-path-plugin/path-checker': 'off',
-                'eslint-path-plugin/public-api-imports': 'off',
-                'eslint-path-plugin/layer-imports': 'off',
-            },
-        },
     ],
 };

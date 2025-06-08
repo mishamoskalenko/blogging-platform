@@ -1,0 +1,11 @@
+{
+    "id": "1",
+    "first": "Test",
+    "lastname": "User",
+    "age": 35,
+    "currency": "EUR",
+    "country": "France",
+    "city": "Paris",
+    "username": "testuser1",
+    "avatar": "https://i.ibb.co/B52J0x4K/image.png"
+}
