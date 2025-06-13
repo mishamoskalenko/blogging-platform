@@ -125,6 +125,9 @@
       "roles": [
         "ADMIN"
       ],
+      "features": {
+        "isArticleRatingEnabled": true
+      },
       "avatar": "https://i.ibb.co/B52J0x4K/image.png"
     },
     {
@@ -134,6 +137,9 @@
       "roles": [
         "USER"
       ],
+      "features": {
+        "isArticleRatingEnabled": true
+      },
       "avatar": "https://cdn1.iconfinder.com/data/icons/user-pictures/100/male3-1024.png"
     },
     {
@@ -143,6 +149,9 @@
       "roles": [
         "MANAGER"
       ],
+      "features": {
+        "isArticleRatingEnabled": true
+      },
       "avatar": "https://cdn-icons-png.flaticon.com/512/4205/4205906.png"
     },
     {

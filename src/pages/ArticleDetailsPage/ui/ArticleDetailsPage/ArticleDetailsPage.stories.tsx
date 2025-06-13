@@ -2,9 +2,11 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Article, ArticleBlockType, ArticleType } from '@/entities/Article';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator';
 import ArticleDetailsPage from './ArticleDetailsPage';
+import { UserRole } from '@/entities/User';
+import { setFeatureFlags } from '@/shared/lib/features';
 
 export default {
-    title: 'pages/ArticleDetails',
+    title: 'pages/ArticleDetailsPage',
     component: ArticleDetailsPage,
     argTypes: {
         backgroundColor: { control: 'color' },
@@ -100,13 +102,47 @@ const articleRecommendation: Article[] = [
     },
 ];
 
+const articleRatings = [
+    {
+        id: '1',
+        rate: 4,
+        feedback: 'Good article',
+        userId: '1',
+        articleId: '1',
+    },
+    {
+        id: '2',
+        rate: 5,
+        feedback: 'Good article',
+        userId: '1',
+        articleId: '2',
+    },
+];
+
 export const Primary = Template.bind({});
 Primary.args = {};
-Primary.decorators = [StoreDecorator({
-    articleDetails: {
-        data: article,
+Primary.decorators = [
+    (Story) => {
+        setFeatureFlags({ isArticleRatingEnabled: true });
+        return <Story />;
     },
-})];
+    StoreDecorator({
+        articleDetails: {
+            data: article,
+        },
+        user: {
+            authData: {
+                id: '1',
+                username: 'admin',
+                roles: [UserRole.ADMIN],
+                features: {
+                    isArticleRatingEnabled: true,
+                },
+                avatar: 'https://i.ibb.co/B52J0x4K/image.png',
+            },
+        },
+    }),
+];
 Primary.parameters = {
     mockData: [
         {
@@ -114,6 +150,12 @@ Primary.parameters = {
             method: 'GET',
             status: 200,
             response: articleRecommendation,
+        },
+        {
+            url: `${__API__}/article-ratings?userId=1`,
+            method: 'GET',
+            status: 200,
+            response: articleRatings,
         },
     ],
 };
