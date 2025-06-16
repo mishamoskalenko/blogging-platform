@@ -25,7 +25,7 @@ export const Avatar = ({
     }), [size]);
 
     const fallback = <Skeleton width={size} height={size} border="50%" />;
-    const errorFallback = <Icon Svg={userIcon} width={size} height={size} inverted={fallbackInverted} />;
+    const errorFallback = <Icon Svg={userIcon} width={size} height={size} />;
 
     return (
         <AppImage

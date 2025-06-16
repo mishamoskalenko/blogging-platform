@@ -5,6 +5,8 @@ import { Navbar } from '@/widgets/Navbar';
 import { Sidebar } from '@/widgets/Sidebar';
 import { getUserInited, userActions } from '@/entities/User';
 import { AppRouter } from './providers/router';
+import { MainLayout } from '@/shared/layouts/MainLayout';
+import { PageLoader } from '@/widgets/PageLoader';
 
 function App() {
     const dispatch = useDispatch();
@@ -14,14 +16,19 @@ function App() {
         dispatch(userActions.initAuthData());
     }, [dispatch]);
 
+    if (!inited) {
+        return <PageLoader />;
+    }
+
     return (
         <div className={classNames('app', {}, [])}>
             <Suspense fallback="">
-                <Navbar />
-                <div className="content-page">
-                    <Sidebar />
-                    {inited && <AppRouter />}
-                </div>
+                <MainLayout
+                    content={<AppRouter />}
+                    header={<Navbar />}
+                    sidebar={<Sidebar />}
+                    toolbar={<p>toolbar</p>}
+                />
             </Suspense>
         </div>
     );

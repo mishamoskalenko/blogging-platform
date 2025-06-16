@@ -3,7 +3,7 @@ import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Input } from '@/shared/ui/Input';
-import { Button, ButtonTheme } from '@/shared/ui/Button';
+import { Button } from '@/shared/ui/Button';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { HStack } from '@/shared/ui/Stack';
@@ -40,7 +40,7 @@ const AddCommentForm = memo(({ className, onSendComment }: AddCommentFormProps) 
             <HStack justify="between" max className={classNames(cls.AddCommentForm, {}, [className])} data-testid="AddCommentForm">
                 <Input className={cls.input} onChange={onCommentTextChange} placeholder={t('Enter text comment')} value={text} data-testid="AddCommentForm.Input" />
                 <Button
-                    theme={ButtonTheme.OUTLINE}
+                    theme="outline"
                     onClick={onSendHandler}
                     data-testid="AddCommentForm.Button"
                 >

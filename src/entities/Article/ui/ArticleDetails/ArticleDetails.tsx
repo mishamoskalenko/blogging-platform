@@ -89,11 +89,11 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
                     size={TextSize.L}
                 />
                 <div className={cls.articleInfo}>
-                    <Icon className={cls.icon} Svg={EyeIcon} />
+                    <Icon className={cls.icon} Svg={EyeIcon} width={20} height={20} />
                     <Text text={String(article?.views)} />
                 </div>
                 <div className={cls.articleInfo}>
-                    <Icon className={cls.icon} Svg={CalendarIcon} />
+                    <Icon className={cls.icon} Svg={CalendarIcon} width={20} height={20} />
                     <Text text={article?.createdAt} />
                 </div>
                 {article?.blocks.map(renderBlock)}

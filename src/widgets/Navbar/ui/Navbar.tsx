@@ -7,12 +7,9 @@ import {
 import { LoginModal } from '@/features/AuthByUsername';
 import { AvatarDropdown } from '@/features/avatarDropdown';
 import { NotificationButton } from '@/features/notificationButton';
-import { getRouteArticleCreate } from '@/shared/const/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink';
-import { Button, ButtonTheme } from '@/shared/ui/Button';
+import { Button } from '@/shared/ui/Button';
 import { HStack } from '@/shared/ui/Stack';
-import { Text, TextTheme } from '@/shared/ui/Text';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -34,10 +31,9 @@ export const Navbar = memo(({ className }: NavbarProps) => {
     if (authData) {
         return (
             <header className={classNames(cls.Navbar, {}, [className])}>
-                <Text className={cls.appName} theme={TextTheme.INVERTED} title={t('Blogging platform')} />
-                <AppLink className={cls.createBtn} to={getRouteArticleCreate()} theme={AppLinkTheme.SECONDARY}>
+                {/* <AppLink className={cls.createBtn} to={getRouteArticleCreate()} theme={AppLinkTheme.SECONDARY}>
                     {t('Create new article')}
-                </AppLink>
+                </AppLink> */}
                 <HStack gap="16" className={cls.actions}>
                     <NotificationButton />
                     <AvatarDropdown />
@@ -48,7 +44,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
 
     return (
         <header className={classNames(cls.Navbar, {}, [className])}>
-            <Button theme={ButtonTheme.CLEAR_INVERTED} className={cls.links} onClick={onOpenModal}>
+            <Button theme="clear" className={cls.links} onClick={onOpenModal}>
                 {t('Login')}
             </Button>
             {isAuthModal && (

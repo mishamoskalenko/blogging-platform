@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { Button, ButtonTheme } from '@/shared/ui/Button';
+import { Button } from '@/shared/ui/Button';
 import { Input } from '@/shared/ui/Input';
 import { Text, TextTheme } from '@/shared/ui/Text';
 import { loginActions, loginReducer } from '../../model/slice/loginSlice';
@@ -54,7 +54,7 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
                 {error && <Text text={t('You have entered an incorrect username or password')} theme={TextTheme.ERROR} />}
                 <Input className={cls.input} type="text" placeholder={t('Enter username')} autofocus onChange={onChangeUsername} value={username} />
                 <Input className={cls.input} type="password" placeholder={t('Enter password')} onChange={onChangePassword} value={password} />
-                <Button className={cls.loginBtn} theme={ButtonTheme.OUTLINE} onClick={onLoginClick} disabled={isLoading}>
+                <Button className={cls.loginBtn} theme="outline" onClick={onLoginClick} disabled={isLoading}>
                     {t('Login')}
                 </Button>
             </div>

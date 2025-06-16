@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { getRouteArticleEdit, getRouteArticles } from '@/shared/const/router';
-import { Button, ButtonTheme } from '@/shared/ui/Button';
+import { Button } from '@/shared/ui/Button';
 import { getArticleDetailsData } from '@/entities/Article';
 import { HStack } from '@/shared/ui/Stack';
 import { getCanEditArticle } from '../../model/selectors/article/article';
@@ -31,12 +31,12 @@ export const ArticleDetailsPageHeader = memo(({ className }: ArticleDetailsPageH
 
     return (
         <HStack max justify="between" className={classNames('', {}, [className])}>
-            <Button theme={ButtonTheme.OUTLINE} onClick={onBackToggle}>
+            <Button theme="outline" onClick={onBackToggle}>
                 {t('Back to list')}
             </Button>
             {canEdit && (
                 <Button
-                    theme={ButtonTheme.OUTLINE}
+                    theme="outline"
                     onClick={onEditArticle}
                 >
                     {t('Edit')}

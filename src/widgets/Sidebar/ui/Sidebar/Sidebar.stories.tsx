@@ -12,7 +12,11 @@ export default {
     },
 } as ComponentMeta<typeof Sidebar>;
 
-const Template: ComponentStory<typeof Sidebar> = (args) => <Sidebar {...args} />;
+const Template: ComponentStory<typeof Sidebar> = (args) => (
+    <div style={{ height: '100vh' }}>
+        <Sidebar {...args} />
+    </div>
+);
 
 export const Light = Template.bind({});
 Light.args = {};

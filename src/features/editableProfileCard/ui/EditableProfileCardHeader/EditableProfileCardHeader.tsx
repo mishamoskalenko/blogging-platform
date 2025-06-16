@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { getUserAuthData } from '@/entities/User';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { Button, ButtonTheme } from '@/shared/ui/Button';
+import { Button } from '@/shared/ui/Button';
 import { HStack } from '@/shared/ui/Stack';
 import { Text } from '@/shared/ui/Text';
 import { getProfileData } from '../../model/selectors/getProfileData/getProfileData';
@@ -43,16 +43,16 @@ export const EditableProfileCardHeader = memo(({ className }: EditableProfileCar
                 <div>
                     {readonly
                         ? (
-                            <Button theme={ButtonTheme.OUTLINE} onClick={onEdit} data-testid="EditableProfileCardHeader.EditButton">
+                            <Button theme="outline" onClick={onEdit} data-testid="EditableProfileCardHeader.EditButton">
                                 {t('Edit')}
                             </Button>
                         )
                         : (
                             <HStack gap="8">
-                                <Button theme={ButtonTheme.OUTLINE_RED} onClick={onCancelEdit} data-testid="EditableProfileCardHeader.CancelButton">
+                                <Button theme="outline" onClick={onCancelEdit} data-testid="EditableProfileCardHeader.CancelButton">
                                     {t('Cancel')}
                                 </Button>
-                                <Button theme={ButtonTheme.OUTLINE} onClick={onSave} data-testid="EditableProfileCardHeader.SaveButton">
+                                <Button theme="outline" onClick={onSave} data-testid="EditableProfileCardHeader.SaveButton">
                                     {t('Save')}
                                 </Button>
                             </HStack>

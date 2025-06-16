@@ -8,7 +8,7 @@ import { Text } from '@/shared/ui/Text';
 import { StarRating } from '@/shared/ui/StarRating';
 import { Modal } from '@/shared/ui/Modal';
 import { Input } from '@/shared/ui/Input';
-import { Button, ButtonSize, ButtonTheme } from '@/shared/ui/Button';
+import { Button } from '@/shared/ui/Button';
 import { Drawer } from '@/shared/ui/Drawer';
 
 interface RatingProps {
@@ -68,7 +68,7 @@ export const RatingCard = memo((props: RatingProps) => {
                     <VStack gap="32" max>
                         {modalContent}
                         <HStack gap="16" justify="end" max>
-                            <Button data-testid="RatingCard.Close" onClick={cancelHandle} theme={ButtonTheme.OUTLINE_RED}>{t('Close')}</Button>
+                            <Button data-testid="RatingCard.Close" onClick={cancelHandle} theme="outline">{t('Close')}</Button>
                             <Button data-testid="RatingCard.Send" onClick={acceptHandle}>{t('Send')}</Button>
                         </HStack>
                     </VStack>
@@ -78,7 +78,7 @@ export const RatingCard = memo((props: RatingProps) => {
                 <Drawer isOpen={isModalOpen} lazy onClose={cancelHandle}>
                     <VStack gap="32">
                         {modalContent}
-                        <Button fullWidth onClick={acceptHandle} size={ButtonSize.L}>
+                        <Button fullWidth onClick={acceptHandle} size="l">
                             {t('Отправить')}
                         </Button>
                     </VStack>

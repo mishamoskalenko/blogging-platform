@@ -3,5 +3,4 @@ node_modules
 .idea
 storybook-static
 reports/unit
-README.md
 .vscode

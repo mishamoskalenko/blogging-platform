@@ -6,7 +6,7 @@ import { Icon } from '@/shared/ui/Icon';
 import EyeIcon from '@/shared/assets/icons/eye.svg';
 import { Card } from '@/shared/ui/Card';
 import { Avatar } from '@/shared/ui/Avatar';
-import { Button, ButtonTheme } from '@/shared/ui/Button';
+import { Button } from '@/shared/ui/Button';
 import { getRouteArticleDetails } from '@/shared/const/router';
 import { AppLink } from '@/shared/ui/AppLink';
 import {
@@ -36,7 +36,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
     const views = (
         <>
             <Text className={cls.views} text={String(article.views)} />
-            <Icon Svg={EyeIcon} />
+            <Icon Svg={EyeIcon} width={20} height={20} />
         </>
     );
 
@@ -57,7 +57,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
                         <ArticleTextBlockComponent className={cls.textBlock} block={textBlock} />
                     )}
                     <AppLink className={cls.footer} to={getRouteArticleDetails(article.id)} target={target}>
-                        <Button theme={ButtonTheme.OUTLINE}>
+                        <Button theme="outline">
                             {t('Read more...')}
                         </Button>
                         {views}
