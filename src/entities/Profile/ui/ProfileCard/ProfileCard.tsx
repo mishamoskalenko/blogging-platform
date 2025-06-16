@@ -5,7 +5,7 @@ import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import { Avatar } from '@/shared/ui/Avatar';
 import { Input } from '@/shared/ui/Input';
 import { Loader } from '@/shared/ui/Loader';
-import { Text, TextAlign, TextTheme } from '@/shared/ui/Text';
+import { Text } from '@/shared/ui/Text';
 import { HStack, VStack } from '@/shared/ui/Stack';
 import { Profile } from '../../model/types/profile';
 import cls from './ProfileCard.module.scss';
@@ -55,7 +55,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
     if (error) {
         return (
             <HStack justify="center" max className={classNames(cls.ProfileCard, {}, [className, cls.error])}>
-                <Text theme={TextTheme.ERROR} title={t('An error occurred while loading the profile')} text={t('Try refresh the page')} align={TextAlign.CENTER} />
+                <Text theme="error" title={t('An error occurred while loading the profile')} text={t('Try refresh the page')} align="center" />
             </HStack>
         );
     }

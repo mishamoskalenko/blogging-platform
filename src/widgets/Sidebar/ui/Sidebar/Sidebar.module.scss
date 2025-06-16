@@ -15,13 +15,18 @@
     gap: 16px;
 }
 
-.collapsedBtn {
+button.collapsedBtn {
     position: absolute;
     top: 50%;
-    left: 65px;
-    transform: rotate(90deg);
+    right: 10px;
+    transform: translateY(-50%);
     width: 251px;
     height: 32px;
+}
+
+svg.collapsedBtn {
+    transform: rotate(90deg);
+    pointer-events: none;
 }
 
 .items {
@@ -71,8 +76,7 @@
         text-align: center;
     }
 
-    .collapsedBtn {
+    svg.collapsedBtn {
         transform: rotate(-90deg);
-        left: -100px;
     }
 }

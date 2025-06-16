@@ -6,7 +6,7 @@ import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/Dynam
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Button } from '@/shared/ui/Button';
 import { Input } from '@/shared/ui/Input';
-import { Text, TextTheme } from '@/shared/ui/Text';
+import { Text } from '@/shared/ui/Text';
 import { loginActions, loginReducer } from '../../model/slice/loginSlice';
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
 import { getLoginUsername } from '../../model/selectors/getLoginUsername/getLoginUsername';
@@ -51,7 +51,7 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
         <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount>
             <div className={classNames(cls.LoginForm, {}, [className])}>
                 <Text title={t('Authorisation form')} />
-                {error && <Text text={t('You have entered an incorrect username or password')} theme={TextTheme.ERROR} />}
+                {error && <Text text={t('You have entered an incorrect username or password')} theme="error" />}
                 <Input className={cls.input} type="text" placeholder={t('Enter username')} autofocus onChange={onChangeUsername} value={username} />
                 <Input className={cls.input} type="password" placeholder={t('Enter password')} onChange={onChangePassword} value={password} />
                 <Button className={cls.loginBtn} theme="outline" onClick={onLoginClick} disabled={isLoading}>

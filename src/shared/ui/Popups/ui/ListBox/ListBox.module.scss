@@ -7,11 +7,12 @@
 }
 
 .options {
-    background: var(--listbox-bg);
+    background: var(--dark-bg);
     position: absolute;
     z-index: 100;
-    border-radius: 12px;
-    box-shadow: 4px 4px 8px var(--listbox-bg);
+    box-shadow: 4px 4px 8px var(--dark-bg);
+    border-radius: 18px;
+    border: 1px solid var(--accent);
 }
 
 .item {
@@ -19,7 +20,7 @@
 }
 
 .active {
-    background: var(--inverted-primary-color);
+    background: var(--light-bg);
     border-radius: 12px;
 }
 

@@ -2,7 +2,6 @@ import { memo, useCallback, useState } from 'react';
 import { BrowserView, MobileView } from 'react-device-detect';
 import NotificationIcon from '@/shared/assets/icons/notification.svg';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Button } from '@/shared/ui/Button';
 import { Drawer } from '@/shared/ui/Drawer';
 import { Icon } from '@/shared/ui/Icon';
 import { Popover } from '@/shared/ui/Popups';
@@ -25,9 +24,7 @@ export const NotificationButton = memo(({ className }: NotificationButtonProps) 
     }, []);
 
     const trigger = (
-        <Button theme="clear" onClick={onOpenDrawer}>
-            <Icon Svg={NotificationIcon} width={20} height={20} />
-        </Button>
+        <Icon onClick={onOpenDrawer} Svg={NotificationIcon} width={20} height={20} clickable />
     );
 
     return (

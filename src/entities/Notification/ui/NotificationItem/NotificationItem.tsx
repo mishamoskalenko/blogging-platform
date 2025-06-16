@@ -1,6 +1,6 @@
 import { memo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Card, CardTheme } from '@/shared/ui/Card';
+import { Card } from '@/shared/ui/Card';
 import { Text } from '@/shared/ui/Text';
 import { Notification } from '../../model/types/notifications';
 import cls from './NotificationItem.module.scss';
@@ -14,7 +14,7 @@ export const NotificationItem = memo((props: NotificationItemProps) => {
     const { className, item } = props;
 
     const content = (
-        <Card theme={CardTheme.OUTLINED} className={classNames(cls.NotificationItem, {}, [className])}>
+        <Card className={classNames(cls.NotificationItem, {}, [className])}>
             <Text title={item.title} text={item.description} />
         </Card>
     );

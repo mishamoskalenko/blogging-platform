@@ -30,25 +30,27 @@ export const AvatarDropdown = memo(({ className }: AvatarDropdownProps) => {
         return null;
     }
 
+    const items = [
+        ...(isAdminPanelAvailable ? [{
+            content: t('Admin'),
+            href: getRouteAdmin(),
+        }] : []),
+        {
+            content: t('Profile'),
+            href: getRouteProfile(authData.id),
+        },
+        {
+            content: t('Logout'),
+            onClick: onLogout,
+        },
+    ];
+
     return (
         <Dropdown
             className={classNames('', {}, [className])}
-            items={[
-                ...(isAdminPanelAvailable ? [{
-                    content: t('Admin'),
-                    href: getRouteAdmin(),
-                }] : []),
-                {
-                    content: t('Profile'),
-                    href: getRouteProfile(authData.id),
-                },
-                {
-                    content: t('Logout'),
-                    onClick: onLogout,
-                },
-            ]}
+            items={items}
             direction="bottom left"
-            trigger={<Avatar size={30} src={authData.avatar} fallbackInverted alt="avatar" />}
+            trigger={<Avatar size={40} src={authData.avatar} fallbackInverted alt="avatar" />}
         />
     );
 });

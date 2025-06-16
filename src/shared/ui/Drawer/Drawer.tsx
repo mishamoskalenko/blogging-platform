@@ -81,7 +81,7 @@ export const DrawerContent = memo((props: DrawerProps) => {
     const display = y.to((py) => (py < height ? 'block' : 'none'));
 
     return (
-        <Portal>
+        <Portal element={document.getElementById('app') ?? document.body}>
             <div className={classNames(cls.Drawer, {}, [className, theme, 'app_drawer'])}>
                 <Overlay onClick={close} />
                 <Spring.a.div

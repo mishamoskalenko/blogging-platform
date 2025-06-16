@@ -1,7 +1,7 @@
 import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Text, TextAlign, TextTheme } from '@/shared/ui/Text';
+import { Text } from '@/shared/ui/Text';
 import { Article } from '../../model/types/article';
 import { ArticleView } from '../../model/consts/articleConsts';
 import cls from './ArticleList.module.scss';
@@ -36,7 +36,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
 
     if (!isLoading && !articles.length) {
         return (
-            <Text title={t('No articles found')} align={TextAlign.CENTER} theme={TextTheme.ERROR} />
+            <Text title={t('No articles found')} align="center" theme="error" />
         );
     }
 

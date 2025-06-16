@@ -36,8 +36,8 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
                 className={cls.collapsedBtn}
                 Svg={ArrowIcon}
                 clickable
-                width={40}
-                height={40}
+                width={32}
+                height={251}
             />
             <div className={cls.switchers}>
                 <ThemeSwitcher />

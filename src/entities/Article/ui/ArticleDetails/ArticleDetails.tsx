@@ -6,7 +6,7 @@ import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/Dynam
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Avatar } from '@/shared/ui/Avatar';
 import { Skeleton } from '@/shared/ui/Skeleton';
-import { Text, TextAlign, TextSize } from '@/shared/ui/Text';
+import { Text } from '@/shared/ui/Text';
 import EyeIcon from '@/shared/assets/icons/eye.svg';
 import CalendarIcon from '@/shared/assets/icons/calendar.svg';
 import { Icon } from '@/shared/ui/Icon';
@@ -70,7 +70,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
         );
     } else if (error) {
         content = (
-            <Text title={t('An error occurred when loading the article')} align={TextAlign.CENTER} />
+            <Text title={t('An error occurred when loading the article')} align="center" />
         );
     } else {
         content = (
@@ -86,7 +86,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
                     className={cls.title}
                     title={article?.title}
                     text={article?.subtitle}
-                    size={TextSize.L}
+                    size="l"
                 />
                 <div className={cls.articleInfo}>
                     <Icon className={cls.icon} Svg={EyeIcon} width={20} height={20} />

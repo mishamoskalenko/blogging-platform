@@ -27,12 +27,12 @@ export const Icon = memo((props: IconProps) => {
     } = props;
 
     const icon = (
-        <Svg className={classNames(cls.Icon, {}, [className])} width={width} height={height} {...otherProps} />
+        <Svg className={classNames(cls.Icon, {}, [className])} onClick={undefined} width={width} height={height} {...otherProps} />
     );
 
     if (clickable) {
         return (
-            <button className={cls.button} onClick={props.onClick} type="button" style={{ height, width }} data-testid={props['data-testid']}>
+            <button className={classNames(cls.button, {}, [className])} onClick={props.onClick} type="button" style={{ height, width }} data-testid={props['data-testid']}>
                 {icon}
             </button>
         );

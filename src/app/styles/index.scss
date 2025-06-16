@@ -11,6 +11,8 @@ body {
 
 .app {
     min-height: 100%;
+    font: var(--font-m);
+    color: var(--text);
     background: var(--bg);
 }
 

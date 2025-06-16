@@ -3,7 +3,7 @@ import { memo } from 'react';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { ArticleList } from '@/entities/Article';
-import { Text, TextTheme } from '@/shared/ui/Text';
+import { Text } from '@/shared/ui/Text';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { getArticles } from '../../model/slice/articlesPageSlice';
 import { getArticlesPageError, getArticlesPageIsLoading, getArticlesPageView } from '../../model/selectors/articlesPageSelectors';
@@ -23,7 +23,7 @@ export const ArticleInfinityList = memo(({ className }: ArticleInfinityListProps
 
     if (error) {
         return (
-            <Text title={t('Error has occured')} theme={TextTheme.ERROR} />
+            <Text title={t('Error has occured')} theme="error" />
         );
     }
 
