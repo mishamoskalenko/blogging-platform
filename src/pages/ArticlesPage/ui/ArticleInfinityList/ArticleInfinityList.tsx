@@ -7,7 +7,6 @@ import { Text } from '@/shared/ui/Text';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { getArticles } from '../../model/slice/articlesPageSlice';
 import { getArticlesPageError, getArticlesPageIsLoading, getArticlesPageView } from '../../model/selectors/articlesPageSelectors';
-import cls from './ArticleInfinityList.module.scss';
 
 interface ArticleInfinityListProps {
     className?: string;
@@ -28,12 +27,12 @@ export const ArticleInfinityList = memo(({ className }: ArticleInfinityListProps
     }
 
     return (
-        <div className={classNames(cls.ArticleInfinityList, {}, [className])}>
+        <div className={classNames('', {}, [className])}>
             <ArticleList
                 isLoading={isLoading}
                 view={view}
                 articles={articles}
-                className={classNames(cls.list, {}, [])}
+                className={classNames('', {}, [])}
             />
         </div>
     );
