@@ -36,9 +36,14 @@
 }
 
 .outline {
-    border: 1px solid var(--primary-color);
-    color: var(--primary-color);
+    border-radius: 16px;
+    border: 2px solid var(--icon);
+    color: var(--text);
     background: none;
+
+    &:hover {
+        border: 2px solid var(--accent);
+    }
 }
 
 .filled {
@@ -46,6 +51,30 @@
     border: none;
     outline: none;
     border-radius: 34px;
+}
+
+.cancel {
+    background: var(--light-bg);
+    outline: none;
+    padding: 8px 16px;
+    border-radius: 16px;
+    border: 2px solid var(--cancel);
+}
+
+.save {
+    background: var(--light-bg);
+    outline: none;
+    padding: 8px 16px;
+    border-radius: 16px;
+    border: 2px solid var(--save);
+}
+
+.edit {
+    background: var(--light-bg);
+    outline: none;
+    padding: 8px 16px;
+    border-radius: 16px;
+    border: 2px solid var(--icon);
 }
 
 .withAddon {

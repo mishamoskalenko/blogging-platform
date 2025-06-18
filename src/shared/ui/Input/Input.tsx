@@ -3,12 +3,15 @@ import React, {
 } from 'react';
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import cls from './Input.module.scss';
+import { HStack } from '../Stack';
+import { Text } from '../Text';
 
 type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readOnly'>
 
 interface InputProps extends HTMLInputProps {
     className?: string;
     value?: string | number;
+    label?: string;
     onChange?: (value: string) => void;
     autofocus?: boolean;
     readonly?: boolean;
@@ -27,6 +30,7 @@ export const Input = memo((props: InputProps) => {
         readonly,
         addonLeft,
         addonRight,
+        label,
         ...otherProps
     } = props;
 
@@ -60,21 +64,24 @@ export const Input = memo((props: InputProps) => {
     };
 
     return (
-        <div className={classNames(cls.InputWrapper, mods, [className])}>
-            <div className={cls.addonLeft}>{addonLeft}</div>
-            <input
-                ref={ref}
-                type={type}
-                value={value}
-                onChange={onChangeHandler}
-                className={cls.input}
-                onFocus={onFocus}
-                onBlur={onBlur}
-                placeholder={placeholder}
-                readOnly={readonly}
-                {...otherProps}
-            />
-            <div className={cls.addonRight}>{addonRight}</div>
-        </div>
+        <HStack max gap="8">
+            <Text text={label} />
+            <div className={classNames(cls.InputWrapper, mods, [className])}>
+                <div className={cls.addonLeft}>{addonLeft}</div>
+                <input
+                    ref={ref}
+                    type={type}
+                    value={value}
+                    onChange={onChangeHandler}
+                    className={cls.input}
+                    onFocus={onFocus}
+                    onBlur={onBlur}
+                    placeholder={placeholder}
+                    readOnly={readonly}
+                    {...otherProps}
+                />
+                <div className={cls.addonRight}>{addonRight}</div>
+            </div>
+        </HStack>
     );
 });

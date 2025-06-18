@@ -1,14 +1,15 @@
 import { useTranslation } from 'react-i18next';
 import { Country, CountrySelect } from '@/entities/Country';
 import { Currency, CurrencySelect } from '@/entities/Currency';
-import { classNames, Mods } from '@/shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { Avatar } from '@/shared/ui/Avatar';
 import { Input } from '@/shared/ui/Input';
-import { Loader } from '@/shared/ui/Loader';
 import { Text } from '@/shared/ui/Text';
 import { HStack, VStack } from '@/shared/ui/Stack';
 import { Profile } from '../../model/types/profile';
 import cls from './ProfileCard.module.scss';
+import { Card } from '@/shared/ui/Card';
+import { Skeleton } from '@/shared/ui/Skeleton';
 
 interface ProfileCardProps {
     className?: string;
@@ -46,9 +47,28 @@ export const ProfileCard = (props: ProfileCardProps) => {
 
     if (isLoading) {
         return (
-            <HStack justify="center" max className={classNames(cls.ProfileCard, {}, [className, cls.loading])}>
-                <Loader />
-            </HStack>
+            <Card padding="24" max>
+                <VStack gap="32">
+                    <HStack max justify="center">
+                        <Skeleton border="100%" width={128} height={128} />
+                    </HStack>
+                    <HStack gap="32" max>
+                        <VStack gap="16" max>
+                            <Skeleton width="100%" height={38} />
+                            <Skeleton width="100%" height={38} />
+                            <Skeleton width="100%" height={38} />
+                            <Skeleton width="100%" height={38} />
+                        </VStack>
+
+                        <VStack gap="16" max>
+                            <Skeleton width="100%" height={38} />
+                            <Skeleton width="100%" height={38} />
+                            <Skeleton width="100%" height={38} />
+                            <Skeleton width="100%" height={38} />
+                        </VStack>
+                    </HStack>
+                </VStack>
+            </Card>
         );
     }
 
@@ -60,25 +80,27 @@ export const ProfileCard = (props: ProfileCardProps) => {
         );
     }
 
-    const mods: Mods = {
-        [cls.editing]: !readonly,
-    };
-
     return (
-        <VStack gap="8" max className={classNames(cls.ProfileCard, mods, [className])}>
+        <VStack gap="16" max className={classNames(cls.ProfileCard, {}, [className])}>
             {data?.avatar && (
                 <HStack justify="center" max className={cls.avatarWrapper}>
                     <Avatar src={data?.avatar} alt="avatar" />
                 </HStack>
             )}
-            <Input value={data?.first} placeholder={t('Your name')} className={cls.input} onChange={onChangeFirstName} readonly={readonly} data-testid="ProfileCard.firstname" />
-            <Input value={data?.lastname} placeholder={t('Your surname')} className={cls.input} onChange={onChangeLastName} readonly={readonly} data-testid="ProfileCard.lastname" />
-            <Input value={data?.age} placeholder={t('Your age')} className={cls.input} onChange={onChangeAge} readonly={readonly} pattern="\d*" />
-            <Input value={data?.city} placeholder={t('Your city')} className={cls.input} onChange={onChangeCity} readonly={readonly} />
-            <Input value={data?.username} placeholder={t('Your username')} className={cls.input} onChange={onChangeUsername} readonly={readonly} />
-            <Input value={data?.avatar} placeholder={t('Your avatar link')} className={cls.input} onChange={onChangeAvatar} readonly={readonly} />
-            <CurrencySelect value={data?.currency} className={cls.input} onChange={onChangeCurrency} readonly={readonly} />
-            <CountrySelect value={data?.country} className={cls.input} onChange={onChangeCountry} readonly={readonly} />
+            <HStack gap="24" max>
+                <VStack gap="16" max>
+                    <Input value={data?.first} label="Name:" placeholder={t('Your name')} className={cls.input} onChange={onChangeFirstName} readonly={readonly} data-testid="ProfileCard.firstname" />
+                    <Input value={data?.lastname} label="Surname:" placeholder={t('Your surname')} className={cls.input} onChange={onChangeLastName} readonly={readonly} data-testid="ProfileCard.lastname" />
+                    <Input value={data?.age} label="Age:" placeholder={t('Your age')} className={cls.input} onChange={onChangeAge} readonly={readonly} pattern="\d*" />
+                    <Input value={data?.city} label="City:" placeholder={t('Your city')} className={cls.input} onChange={onChangeCity} readonly={readonly} />
+                </VStack>
+                <VStack gap="16" max>
+                    <Input value={data?.username} label="Username:" placeholder={t('Your username')} className={cls.input} onChange={onChangeUsername} readonly={readonly} />
+                    <Input value={data?.avatar} label="Avatar:" placeholder={t('Your avatar link')} className={cls.input} onChange={onChangeAvatar} readonly={readonly} />
+                    <CurrencySelect value={data?.currency} className={cls.input} onChange={onChangeCurrency} readonly={readonly} />
+                    <CountrySelect value={data?.country} className={cls.input} onChange={onChangeCountry} readonly={readonly} />
+                </VStack>
+            </HStack>
         </VStack>
     );
 };

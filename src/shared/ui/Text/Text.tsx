@@ -4,7 +4,7 @@ import cls from './Text.module.scss';
 
 export type TextTheme = 'primary' | 'error' | 'accent';
 
-export type TextAlign = 'left' | 'center'| 'right';
+export type TextAlign = 'left' | 'center' | 'right';
 
 export type TextSize = 's' | 'm' | 'l';
 
@@ -14,7 +14,8 @@ interface TextProps {
     text?: string;
     theme?: TextTheme;
     align?: TextAlign;
-    size?: TextSize
+    size?: TextSize;
+    bold?: boolean;
     'data-testid'?: string;
 }
 
@@ -34,7 +35,7 @@ const mapSizeToHeaderTag: Record<TextSize, HeaderTagType> = {
 
 export const Text = memo((props: TextProps) => {
     const {
-        className, title, text, theme = 'primary', align = 'left', size = 'm', 'data-testid': dataTestId = 'Text',
+        className, title, text, theme = 'primary', align = 'left', size = 'm', bold, 'data-testid': dataTestId = 'Text',
     } = props;
 
     const HeaderTag = mapSizeToHeaderTag[size];
@@ -43,7 +44,7 @@ export const Text = memo((props: TextProps) => {
     const additionalClasses = [className, cls[theme], cls[align], sizeClass];
 
     return (
-        <div className={classNames(cls.Text, {}, additionalClasses)}>
+        <div className={classNames(cls.Text, { [cls.bold]: bold }, additionalClasses)}>
             {title && <HeaderTag className={cls.title} data-testid={`${dataTestId}.Header`}>{title}</HeaderTag>}
             {text && <p className={cls.text} data-testid={`${dataTestId}.Paragraph`}>{text}</p>}
         </div>

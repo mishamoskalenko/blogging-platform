@@ -6,7 +6,6 @@ import { getUserAuthData } from '@/entities/User';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Button } from '@/shared/ui/Button';
 import { HStack } from '@/shared/ui/Stack';
-import { Text } from '@/shared/ui/Text';
 import { getProfileData } from '../../model/selectors/getProfileData/getProfileData';
 import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly';
 import { updateProfileData } from '../../model/services/updateProfileData/updateProfileData';
@@ -37,22 +36,21 @@ export const EditableProfileCardHeader = memo(({ className }: EditableProfileCar
     }, [dispacth]);
 
     return (
-        <HStack max justify="between" className={classNames('', {}, [className])}>
-            <Text title={t('Profile')} />
+        <HStack max justify="end" className={classNames('', {}, [className])}>
             {canEdit && (
                 <div>
                     {readonly
                         ? (
-                            <Button theme="outline" onClick={onEdit} data-testid="EditableProfileCardHeader.EditButton">
+                            <Button theme="edit" onClick={onEdit} data-testid="EditableProfileCardHeader.EditButton">
                                 {t('Edit')}
                             </Button>
                         )
                         : (
                             <HStack gap="8">
-                                <Button theme="outline" onClick={onCancelEdit} data-testid="EditableProfileCardHeader.CancelButton">
+                                <Button theme="cancel" onClick={onCancelEdit} data-testid="EditableProfileCardHeader.CancelButton">
                                     {t('Cancel')}
                                 </Button>
-                                <Button theme="outline" onClick={onSave} data-testid="EditableProfileCardHeader.SaveButton">
+                                <Button theme="save" onClick={onSave} data-testid="EditableProfileCardHeader.SaveButton">
                                     {t('Save')}
                                 </Button>
                             </HStack>

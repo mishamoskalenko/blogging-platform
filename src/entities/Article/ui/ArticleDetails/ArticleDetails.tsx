@@ -89,7 +89,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
                     size="l"
                 />
                 <div className={cls.articleInfo}>
-                    <Icon className={cls.icon} Svg={EyeIcon} width={20} height={20} />
+                    <Icon className={cls.icon} Svg={EyeIcon} width={25} height={25} />
                     <Text text={String(article?.views)} />
                 </div>
                 <div className={cls.articleInfo}>

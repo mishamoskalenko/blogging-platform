@@ -14,9 +14,9 @@ import {
 } from '../../model/types/article';
 import { ArticleBlockType, ArticleView } from '../../model/consts/articleConsts';
 import cls from './ArticleListItem.module.scss';
-import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import { AppImage } from '@/shared/ui/AppImage';
 import { Skeleton } from '@/shared/ui/Skeleton';
+import { HStack, VStack } from '@/shared/ui/Stack';
 
 interface ArticleListItemProps {
     className?: string;
@@ -31,57 +31,65 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
     } = props;
     const { t } = useTranslation();
 
-    const types = <Text className={cls.types} text={article.type.join(', ')} />;
-
     const views = (
-        <>
+        <HStack gap="8">
+            <Icon Svg={EyeIcon} width={32} height={32} />
             <Text className={cls.views} text={String(article.views)} />
-            <Icon Svg={EyeIcon} width={20} height={20} />
-        </>
+        </HStack>
     );
 
     if (view === ArticleView.BIG) {
         const textBlock = article.blocks.find((block) => block.type === ArticleBlockType.TEXT) as ArticleTextBlock;
         return (
-            <div className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}>
-                <Card className={cls.card}>
-                    <div className={cls.header}>
-                        <Avatar size={30} src={article.user.avatar} />
-                        <Text className={cls.username} text={article.user.username} />
+            <Card className={classNames(cls.ArticleListItem, {}, [className, cls[view]])} max padding="24">
+                <VStack max gap="16">
+                    <HStack gap="8">
+                        <Avatar size={32} src={article.user.avatar} />
+                        <Text bold className={cls.username} text={article.user.username} />
                         <Text className={cls.date} text={article.createdAt} />
-                    </div>
-                    <Text className={cls.title} text={article.title} />
-                    {types}
+                    </HStack>
+                    <Text className={cls.title} bold title={article.title} />
+                    <Text className={cls.subtitle} bold size="s" title={article.title} />
                     <AppImage className={cls.img} src={article.img} alt={article.title} fallback={<Skeleton width="100%" height="250px" />} />
-                    {textBlock && (
-                        <ArticleTextBlockComponent className={cls.textBlock} block={textBlock} />
+                    {textBlock?.paragraphs && (
+                        <Text className={cls.textBlock} text={textBlock.paragraphs.slice(0, 2).join('')} />
                     )}
-                    <AppLink className={cls.footer} to={getRouteArticleDetails(article.id)} target={target}>
-                        <Button theme="outline">
-                            {t('Read more...')}
-                        </Button>
+                    <HStack max justify="between" align="center">
+                        <AppLink className={cls.footer} to={getRouteArticleDetails(article.id)} target={target}>
+                            <Button theme="outline">
+                                {t('Read more...')}
+                            </Button>
+                        </AppLink>
                         {views}
-                    </AppLink>
-                </Card>
-            </div>
+                    </HStack>
+                </VStack>
+            </Card>
         );
     }
 
     return (
-        <div className={classNames(cls.ArticleListItem, {}, [className, cls[view]])} data-testid="ArticleListItem">
-            <AppLink target={target} to={getRouteArticleDetails(article.id)}>
-                <Card className={cls.card}>
-                    <div className={cls.imageWrapper}>
-                        <AppImage className={cls.img} src={article.img} alt={article.title} fallback={<Skeleton width="200px" height="200px" />} />
-                        <Text className={cls.date} text={article.createdAt} />
-                    </div>
-                    <div className={cls.infoWrapper}>
-                        {types}
-                        {views}
-                    </div>
-                    <Text className={cls.title} text={String(article.title)} />
-                </Card>
-            </AppLink>
-        </div>
+        <AppLink
+            target={target}
+            to={getRouteArticleDetails(article.id)}
+            className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
+            data-testid="ArticleListItem"
+        >
+            <Card className={cls.card} border="round">
+                <AppImage className={cls.img} src={article.img} alt={article.title} fallback={<Skeleton width="200px" height="200px" />} />
+                <VStack className={cls.info} gap="4">
+                    <Text title={article.title} className={cls.title} />
+                    <VStack gap="4" className={cls.footer} max>
+                        <HStack justify="between" max>
+                            <Text className={cls.date} text={article.createdAt} />
+                            {views}
+                        </HStack>
+                        <HStack gap="4">
+                            <Avatar size={32} src={article.user.avatar} />
+                            <Text bold text={article.user.username} />
+                        </HStack>
+                    </VStack>
+                </VStack>
+            </Card>
+        </AppLink>
     );
 });

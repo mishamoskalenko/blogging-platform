@@ -4,7 +4,7 @@ import {
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import cls from './Button.module.scss';
 
-export type ButtonTheme = 'clear' | 'outline' | 'filled';
+export type ButtonTheme = 'clear' | 'outline' | 'filled' | 'save' | 'cancel' | 'edit';
 export type ButtonSize = 'm' | 'l' | 'xl';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
