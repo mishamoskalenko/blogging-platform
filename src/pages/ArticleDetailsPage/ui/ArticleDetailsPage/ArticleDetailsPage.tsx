@@ -9,9 +9,8 @@ import cls from './ArticleDetailsPage.module.scss';
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments';
 import { Page } from '@/widgets/Page';
-import { ToggleFeatures } from '@/shared/lib/features';
-import { Counter } from '@/entities/Counter';
-import { ArticleRating } from '@/features/articleRating';
+import { StickyContentLayout } from '@/shared/layouts/StickyContentLayout';
+import { AdditionalInfoContainer } from '../AdditionalInfoContainer/AdditionalInfoContainer';
 
 interface ArticleDetailsPageProps {
     className?: string;
@@ -26,13 +25,19 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-            <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
-                <ArticleDetailsPageHeader />
-                <ArticleDetails id={id} />
-                <ToggleFeatures feature="isArticleRatingEnabled" on={<ArticleRating articleId={id!} />} off={<Counter />} />
-                <ArticleRecommendationsList className="" />
-                <ArticleDetailsComments id={id} />
-            </Page>
+            <StickyContentLayout
+                content={(
+                    <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+                        <ArticleDetailsPageHeader />
+                        <ArticleDetails id={id} />
+                        <ArticleRecommendationsList className="" />
+                        <ArticleDetailsComments id={id} />
+                    </Page>
+                )}
+                right={(
+                    <AdditionalInfoContainer />
+                )}
+            />
         </DynamicModuleLoader>
     );
 };

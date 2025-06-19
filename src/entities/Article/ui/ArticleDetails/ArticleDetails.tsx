@@ -4,12 +4,8 @@ import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { Avatar } from '@/shared/ui/Avatar';
 import { Skeleton } from '@/shared/ui/Skeleton';
 import { Text } from '@/shared/ui/Text';
-import EyeIcon from '@/shared/assets/icons/eye.svg';
-import CalendarIcon from '@/shared/assets/icons/calendar.svg';
-import { Icon } from '@/shared/ui/Icon';
 import { ArticleBlock } from '../../model/types/article';
 import { ArticleBlockType } from '../../model/consts/articleConsts';
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
@@ -19,6 +15,10 @@ import cls from './ArticleDetails.module.scss';
 import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
 import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
+import { Card } from '@/shared/ui/Card';
+import { AppImage } from '@/shared/ui/AppImage';
+// eslint-disable-next-line eslint-path-plugin/layer-imports
+import { ArticleRating } from '@/features/articleRating';
 
 interface ArticleDetailsProps {
     className?: string;
@@ -75,37 +75,29 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     } else {
         content = (
             <div data-testid="ArticleDetails.Info">
-                <div className={cls.avatarWrapper}>
-                    <Avatar
-                        size={200}
-                        src={article?.img}
-                        className={cls.avatar}
-                    />
-                </div>
                 <Text
                     className={cls.title}
                     title={article?.title}
+                    size="l"
+                    bold
+                />
+                <Text
+                    className={cls.subtitle}
                     text={article?.subtitle}
                     size="l"
                 />
-                <div className={cls.articleInfo}>
-                    <Icon className={cls.icon} Svg={EyeIcon} width={25} height={25} />
-                    <Text text={String(article?.views)} />
-                </div>
-                <div className={cls.articleInfo}>
-                    <Icon className={cls.icon} Svg={CalendarIcon} width={20} height={20} />
-                    <Text text={article?.createdAt} />
-                </div>
+                <AppImage className={cls.img} src={article?.img} fallback={<Skeleton width="100%" height={420} border="16px" />} />
                 {article?.blocks.map(renderBlock)}
+                <ArticleRating articleId={id!} />
             </div>
         );
     }
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-            <div className={classNames(cls.ArticleDetails, {}, [className])}>
+            <Card max border="round" padding="24" className={classNames(cls.ArticleDetails, {}, [className])}>
                 {content}
-            </div>
+            </Card>
         </DynamicModuleLoader>
     );
 });

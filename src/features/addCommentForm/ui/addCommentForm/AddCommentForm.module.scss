@@ -1,7 +1,8 @@
 .AddCommentForm {
-    border: 1px solid var(--primary-color);
     padding: 20px;
     margin: 20px 0;
+    background: var(--light-bg);
+    border-radius: 42px;
 }
 
 .input {

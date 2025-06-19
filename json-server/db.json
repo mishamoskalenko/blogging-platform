@@ -69,6 +69,18 @@
       "userId": "1",
       "text": "hello!",
       "id": "OTPLxJD"
+    },
+    {
+      "articleId": "18",
+      "userId": "1",
+      "text": "Wow!",
+      "id": "NsEmsf5"
+    },
+    {
+      "articleId": "18",
+      "userId": "1",
+      "text": "Wow!",
+      "id": "_cMJvQf"
     }
   ],
   "profile": [
@@ -1554,6 +1566,30 @@
       "articleId": "19",
       "rate": 4,
       "id": "3fOWjVE"
+    },
+    {
+      "userId": "1",
+      "articleId": "18",
+      "rate": 5,
+      "id": "RVyHClx"
+    },
+    {
+      "userId": "1",
+      "articleId": "3",
+      "rate": 5,
+      "id": "RXjsH_n"
+    },
+    {
+      "userId": "1",
+      "articleId": "3",
+      "rate": 3,
+      "id": "fcLlTGx"
+    },
+    {
+      "userId": "1",
+      "articleId": "3",
+      "rate": 3,
+      "id": "gPdOj3O"
     }
   ]
 }

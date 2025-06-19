@@ -50,7 +50,7 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
     return (
         <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount>
             <div className={classNames(cls.LoginForm, {}, [className])}>
-                <Text title={t('Authorisation form')} />
+                <Text className={cls.title} title={t('Authorisation form')} />
                 {error && <Text text={t('You have entered an incorrect username or password')} theme="error" />}
                 <Input className={cls.input} type="text" placeholder={t('Enter username')} autofocus onChange={onChangeUsername} value={username} />
                 <Input className={cls.input} type="password" placeholder={t('Enter password')} onChange={onChangePassword} value={password} />

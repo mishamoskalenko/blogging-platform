@@ -64,9 +64,9 @@ export const Input = memo((props: InputProps) => {
     };
 
     return (
-        <HStack max gap="8">
-            <Text text={label} />
-            <div className={classNames(cls.InputWrapper, mods, [className])}>
+        <HStack max gap="8" className={classNames('', {}, [className])}>
+            {label && <Text text={label} />}
+            <div className={classNames(cls.InputWrapper, mods)}>
                 <div className={cls.addonLeft}>{addonLeft}</div>
                 <input
                     ref={ref}

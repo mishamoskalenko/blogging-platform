@@ -3,5 +3,8 @@
     "Article was not found": "Article was not found",
     "An error occurred when loading the article": "An error occurred when loading the article",
     "Back to list": "Back to list",
-    "No comments": "No comments"
+    "No comments": "No comments",
+    "{{count}} view_zero": "{{count}} views",
+    "{{count}} view_one": "{{count}} view",
+    "{{count}} view_other": "{{count}} views"
 }

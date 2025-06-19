@@ -90,6 +90,23 @@ const article = {
     ],
 } as Article;
 
+const articleRatings = [
+    {
+        id: '1',
+        rate: 4,
+        feedback: 'Good article',
+        userId: '1',
+        articleId: '1',
+    },
+    {
+        id: '2',
+        rate: 5,
+        feedback: 'Good article',
+        userId: '1',
+        articleId: '2',
+    },
+];
+
 export const Primary = Template.bind({});
 Primary.args = {};
 Primary.decorators = [StoreDecorator({
@@ -97,6 +114,16 @@ Primary.decorators = [StoreDecorator({
         data: article,
     },
 })];
+Primary.parameters = {
+    mockData: [
+        {
+            url: `${__API__}/article-ratings?userId=1`,
+            method: 'GET',
+            status: 200,
+            response: articleRatings,
+        },
+    ],
+};
 
 export const Loading = Template.bind({});
 Loading.args = {};
@@ -113,3 +140,13 @@ Error.decorators = [StoreDecorator({
         error: 'true',
     },
 })];
+Error.parameters = {
+    mockData: [
+        {
+            url: `${__API__}/article-ratings?userId=1`,
+            method: 'GET',
+            status: 200,
+            response: articleRatings,
+        },
+    ],
+};
