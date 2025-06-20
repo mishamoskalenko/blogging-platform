@@ -6,18 +6,27 @@ import { Sidebar } from '@/widgets/Sidebar';
 import { getUserInited, userActions } from '@/entities/User';
 import { AppRouter } from './providers/router';
 import { MainLayout } from '@/shared/layouts/MainLayout';
-import { PageLoader } from '@/widgets/PageLoader';
+import { AppLoaderLayout } from '@/shared/layouts/AppLoaderLayout';
+import { useAppToolbar } from './lib/useAppToolbar';
 
 function App() {
     const dispatch = useDispatch();
     const inited = useSelector(getUserInited);
+    const toolbar = useAppToolbar();
 
     useEffect(() => {
-        dispatch(userActions.initAuthData());
-    }, [dispatch]);
+        if (!inited) {
+            dispatch(userActions.initAuthData());
+        }
+    }, [dispatch, inited]);
 
     if (!inited) {
-        return <PageLoader />;
+        return (
+            <div id="app" className={classNames('app', {}, [])}>
+                <AppLoaderLayout />
+                {' '}
+            </div>
+        );
     }
 
     return (
@@ -27,7 +36,7 @@ function App() {
                     content={<AppRouter />}
                     header={<Navbar />}
                     sidebar={<Sidebar />}
-                    toolbar={<p>toolbar</p>}
+                    toolbar={toolbar}
                 />
             </Suspense>
         </div>

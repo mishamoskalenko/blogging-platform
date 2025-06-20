@@ -75,7 +75,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
             data-testid="ArticleListItem"
         >
             <Card className={cls.card} border="round" padding="0">
-                <AppImage className={cls.img} src={article.img} alt={article.title} fallback={<Skeleton width="200px" height="200px" />} />
+                <AppImage className={cls.img} src={article.img} alt={article.title} fallback={<Skeleton width="249px" height="240px" />} />
                 <VStack className={cls.info} gap="4">
                     <Text title={article.title} className={cls.title} />
                     <VStack gap="4" className={cls.footer} max>
