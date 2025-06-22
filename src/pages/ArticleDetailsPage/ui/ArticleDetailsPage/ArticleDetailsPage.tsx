@@ -35,7 +35,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
                     </Page>
                 )}
                 right={(
-                    <AdditionalInfoContainer />
+                    <AdditionalInfoContainer className={cls.info} />
                 )}
             />
         </DynamicModuleLoader>

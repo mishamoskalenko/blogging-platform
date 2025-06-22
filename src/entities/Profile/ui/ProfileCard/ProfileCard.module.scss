@@ -8,3 +8,15 @@
 .error {
     height: 300px;
 }
+
+@media (max-width: 769px) {
+    .ProfileCard {
+        padding: 5px;
+    }
+
+    .ProfileCardInputs {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+}

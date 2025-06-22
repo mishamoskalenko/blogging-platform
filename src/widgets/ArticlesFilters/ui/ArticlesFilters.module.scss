@@ -1,3 +1,9 @@
 .ArticlesFilters {
     width: 264px;
 }
+
+@media (max-width: 768px) {
+    .ArticlesFilters {
+        display: none;
+    }
+}

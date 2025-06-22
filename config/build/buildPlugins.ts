@@ -54,7 +54,13 @@ export function buildPlugins({
         plugins.push(
             new CopyPlugin({
                 patterns: [
-                    { from: paths.locales, to: paths.buildLocales },
+                    {
+                        from: paths.src.replace('src', 'public'),
+                        to: paths.build,
+                        globOptions: {
+                            ignore: ['**/index.html'],
+                        },
+                    },
                 ],
             }),
         );

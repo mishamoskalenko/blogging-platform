@@ -6,5 +6,13 @@
     "No comments": "Pas de commentaires",
     "{{count}} view_zero": "{{count}} vues",
     "{{count}} view_one": "{{count}} vue",
-    "{{count}} view_other": "{{count}} vues"
+    "{{count}} view_other": "{{count}} vues",
+    "Rate the article": "Évaluer l'article",
+    "Thank you for your review!": "Merci pour votre avis!",
+    "Leave your review of the article": "Laissez votre avis sur l'article",
+    "Edit": "Modifier",
+    "Recommendations": "Recommandations",
+    "Your feedback": "Vos commentaires",
+    "Close": "Fermer",
+    "Send": "Envoyer"
 }

@@ -87,7 +87,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
                     <Avatar src={data?.avatar} alt="avatar" />
                 </HStack>
             )}
-            <HStack gap="24" max>
+            <HStack className={classNames(cls.ProfileCardInputs, {}, [className])} gap="24" max>
                 <VStack gap="16" max>
                     <Input value={data?.first} label="Name:" placeholder={t('Your name')} className={cls.input} onChange={onChangeFirstName} readonly={readonly} data-testid="ProfileCard.firstname" />
                     <Input value={data?.lastname} label="Surname:" placeholder={t('Your surname')} className={cls.input} onChange={onChangeLastName} readonly={readonly} data-testid="ProfileCard.lastname" />

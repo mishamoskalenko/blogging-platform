@@ -6,5 +6,13 @@
     "No comments": "No comments",
     "{{count}} view_zero": "{{count}} views",
     "{{count}} view_one": "{{count}} view",
-    "{{count}} view_other": "{{count}} views"
+    "{{count}} view_other": "{{count}} views",
+    "Rate the article": "Rate the article",
+    "Thank you for your review!": "Thank you for your review!",
+    "Leave your review of the article": "Leave your review of the article",
+    "Edit": "Edit",
+    "Recommendations": "Recommendations",
+    "Your feedback": "Your feedback",
+    "Close": "Close",
+    "Send": "Send"
 }

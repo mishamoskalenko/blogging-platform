@@ -5,3 +5,9 @@
 .list {
     flex-wrap: nowrap;
 }
+
+@media (max-width: 1500px) {
+    .list {
+        flex-wrap: wrap;
+    }
+}

@@ -28,7 +28,7 @@ export const ArticlesFilters = memo((props: ArticlesFiltersProps) => {
     const {
         className, sort, order, type, search, onChangeSearch, onChangeOrder, onChangeSort, onChangeType,
     } = props;
-    const { t } = useTranslation();
+    const { t } = useTranslation('articles');
     return (
         <Card className={classNames(cls.ArticlesFilters, {}, [className])} padding="24">
             <VStack gap="32">

@@ -12,3 +12,9 @@
     overflow-y: hidden;
     overflow-x: auto;
 }
+
+@media (max-width: 1620px) {
+    .info {
+        display: none;
+    }
+}

@@ -37,3 +37,36 @@
     height: 100%;
     width: 100%;
 }
+
+@media (max-width: 1180px) {
+    .MainLayout {
+        overflow-x: scroll;
+    }
+}
+
+@media (max-width: 895px) {
+    .MainLayout {
+        min-height: 100%;
+        display: grid;
+        grid-template-areas: "sidebar content rightbar";
+        grid-template-columns: min-content 1fr 75px;
+    }
+
+    .content {
+        padding: 5px;
+    }
+
+    .sidebar {
+        padding: 5px;
+    }
+}
+
+@media (max-width: 758px) {
+    .MainLayout {
+        min-height: 100%;
+        display: grid;
+        grid-template-areas: "sidebar content rightbar";
+        grid-template-columns: min-content 1fr 75px;
+        overflow-y: scroll;
+    }
+}

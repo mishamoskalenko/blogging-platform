@@ -25,7 +25,7 @@ export const RatingCard = memo((props: RatingProps) => {
     const {
         className, title, feedbackTitle, hasFeedback, onCancel, onAccept, rate = 0,
     } = props;
-    const { t } = useTranslation();
+    const { t } = useTranslation('article-details');
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [starsCount, setStarsCount] = useState(rate);
     const [feedback, setFeedback] = useState('');
@@ -79,7 +79,7 @@ export const RatingCard = memo((props: RatingProps) => {
                     <VStack gap="32">
                         {modalContent}
                         <Button fullWidth onClick={acceptHandle} size="l">
-                            {t('Отправить')}
+                            {t('Send')}
                         </Button>
                     </VStack>
                 </Drawer>

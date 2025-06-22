@@ -80,3 +80,9 @@ svg.collapsedBtn {
         transform: rotate(-90deg);
     }
 }
+
+@media (max-width: 1065px) {
+    button.collapsedBtn {
+        display: none;
+    }
+}
