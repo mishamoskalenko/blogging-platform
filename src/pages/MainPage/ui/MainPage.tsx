@@ -23,7 +23,7 @@ function MainPage() {
                         <VStack gap="8">
                             <Text title={t('PLATFORM_TITLE')} size="m" />
                             <Text text={t('PLATFORM_DESC')} />
-                            <a href="https://mishamoskalenko.github.io/blogging-platform/storybook" target="_blank" rel="noreferrer">Storybook stories view</a>
+                            <a href="https://mishamoskalenko.github.io/blogging-platform" target="_blank" rel="noreferrer">{t('View reports page')}</a>
                         </VStack>
                     </Card>
 

@@ -1,5 +1,5 @@
 {
-    "MAIN_TITLE": "Plateforme de Blog - Projet Personnel Demo",
+    "MAIN_TITLE": "Blogging Platform",
     "WELCOME_MESSAGE": "Bienvenue dans mon projet personnel de plateforme de blog ! Il s'agit d'une application web full-stack construite pour présenter les pratiques modernes de développement React, une architecture propre et des motifs UI/UX avancés.",
     "FEATURES_TITLE": "Identifiants de Démonstration",
     "FEATURES_DESC": "Vous pouvez explorer la plateforme en utilisant ces comptes de test :\nNom d'utilisateur : admin / Mot de passe : 123\nNom d'utilisateur : user / Mot de passe : 123\nNom d'utilisateur : manager / Mot de passe : 123.\nN'hésitez pas à parcourir les articles, modifier les profils et tester toutes les fonctionnalités !",
@@ -11,5 +11,6 @@
     "GET_STARTED_DESC": "Ce projet démontre l'architecture Feature-Sliced Design, les meilleures pratiques TypeScript, Redux Toolkit, React Router v6 et les tests modernes avec Jest & Cypress.",
     "TECHNOLOGY_TITLE": "Stack Technologique",
     "TECHNOLOGY_DESC": "Construite sur une fondation de technologies modernes et évolutives qui garantissent que votre contenu se charge rapidement et semble excellent partout.",
-    "TECH_STACK": "React 18 • TypeScript • Redux Toolkit • React Router 6 • Webpack 5 • Vite • SCSS Modules • i18next • ESLint • Stylelint • Jest • React Testing Library • Cypress • Storybook • Loki • Babel • Husky • JSON Server • Axios"
+    "TECH_STACK": "React 18 • TypeScript • Redux Toolkit • React Router 6 • Webpack 5 • Vite • SCSS Modules • i18next • ESLint • Stylelint • Jest • React Testing Library • Cypress • Storybook • Loki • Babel • Husky • JSON Server • Axios",
+    "View reports page": "Afficher la page des rapports"
 }

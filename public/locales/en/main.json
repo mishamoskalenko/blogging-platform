@@ -1,5 +1,5 @@
 {
-    "MAIN_TITLE": "Blogging Platform - Pet Project",
+    "MAIN_TITLE": "Blogging Platform",
     "FEATURES_TITLE": "Demo Credentials",
     "FEATURES_DESC": "You can explore the platform using these test accounts:\nAdmin: admin, 123\nUser: user, 123\nManager: manager, 123. \nFeel free to browse articles, edit profiles, and test all features!",
     "PLATFORM_TITLE": "Storybook & Documentation",
@@ -8,5 +8,6 @@
     "COMMUNITY_DESC": "Article management, user authentication, profile editing, commenting system, internationalization (EN/FR), theme switching, and comprehensive testing coverage.",
     "TECHNOLOGY_TITLE": "Technology Stack",
     "TECHNOLOGY_DESC": "Built on a foundation of modern, scalable technologies that ensure your content loads fast and looks great everywhere.",
-    "TECH_STACK": "React • TypeScript • Redux Toolkit • React Router • Webpack • Vite • SCSS Modules • i18next • ESLint • Stylelint • Jest • React Testing Library • Cypress • Storybook • Loki • Babel • Husky • JSON Server • Axios"
+    "TECH_STACK": "React • TypeScript • Redux Toolkit • React Router • Webpack • Vite • SCSS Modules • i18next • ESLint • Stylelint • Jest • React Testing Library • Cypress • Storybook • Loki • Babel • Husky • JSON Server • Axios",
+    "View reports page": "View reports page"
 }
