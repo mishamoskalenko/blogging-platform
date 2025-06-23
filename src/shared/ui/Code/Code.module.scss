@@ -16,3 +16,29 @@
 .copyIcon path {
     stroke: var(--icon);
 }
+
+@media (max-width: 1160px) {
+    .Code,
+    .Code code {
+        padding: 16px;
+        white-space: pre-wrap;
+        word-break: break-word;
+    }
+
+    .copyBtn {
+        top: 12px;
+        right: 12px;
+    }
+}
+
+@media (max-width: 530px) {
+    .Code,
+    .Code code {
+        padding: 8px;
+    }
+
+    .copyBtn {
+        top: 8px;
+        right: 8px;
+    }
+}

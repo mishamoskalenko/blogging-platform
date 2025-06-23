@@ -14,6 +14,7 @@
     justify-self: center;
     padding: 0 16px;
     width: 100%;
+    box-sizing: border-box;
 }
 
 .right {
@@ -25,4 +26,29 @@
     position: sticky;
     top: 32px;
     height: fit-content;
+}
+
+@media (max-width: 1385px) {
+    .MainLayout {
+        grid-template-areas: "content";
+        grid-template-columns: 1fr;
+    }
+
+    .left,
+    .right {
+        display: none;
+    }
+}
+
+@media (max-width: 895px) {
+    .content {
+        padding: 0 8px;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 530px) {
+    .content {
+        padding: 0 4px;
+    }
 }

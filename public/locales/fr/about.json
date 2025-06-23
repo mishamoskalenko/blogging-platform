@@ -1,3 +1,15 @@
 {
-    "ABOUT PAGE": "PAGE D'INFORMATION"
+    "ABOUT_TITLE": "À Propos de Notre Plateforme",
+    "ABOUT_DESCRIPTION": "Nous sommes passionnés par l'autonomisation des écrivains et créateurs de contenu avec les outils dont ils ont besoin pour réussir. Notre plateforme représente la prochaine génération de technologie de blog, conçue pour le web moderne.",
+    "MISSION_TITLE": "🎯 Notre Mission",
+    "MISSION_DESC": "Démocratiser la création de contenu et rendre le blogging de haute qualité accessible à tous. Nous croyons que chaque voix mérite d'être entendue, et chaque histoire mérite une belle plateforme pour être racontée.",
+    "INNOVATION_TITLE": "🔬 Innovation",
+    "INNOVATION_DESC": "Repoussant constamment les limites avec l'assistance d'écriture alimentée par l'IA, l'analyse avancée et les technologies web de pointe.",
+    "QUALITY_TITLE": "✨ Qualité d'Abord",
+    "QUALITY_DESC": "Chaque fonctionnalité est conçue avec attention aux détails, garantissant fiabilité, performance et expérience utilisateur exceptionnelle.",
+    "TECHNOLOGY_TITLE": "⚡ Stack Technologique",
+    "TECHNOLOGY_DESC": "Construite sur une fondation de technologies modernes et évolutives qui garantissent que votre contenu se charge rapidement et semble excellent partout.",
+    "TECH_STACK": "React 18 • TypeScript • Redux Toolkit • React Router • i18next • SCSS Modules • Webpack • Jest • Cypress",
+    "CONTACT_TITLE": "🤝 Contactez-Nous",
+    "CONTACT_DESC": "Vous avez des questions ou des commentaires ? Nous aimerions avoir de vos nouvelles. Notre équipe est toujours prête à vous aider à tirer le meilleur parti de notre plateforme."
 }

@@ -1,3 +1,9 @@
 .ScrollToolbar {
     height: 100%;
 }
+
+@media (max-width: 1385px) {
+    .ScrollToolbar {
+        display: none;
+    }
+}

@@ -13,8 +13,36 @@
     overflow-x: auto;
 }
 
-@media (max-width: 1620px) {
+.info {
+    /* visible by default, hidden on smaller screens */
+}
+
+@media (max-width: 895px) {
+    .commentTitle {
+        margin-top: 16px;
+    }
+
+    .recommendations {
+        margin-top: 16px;
+    }
+
+    .ArticleDetailsPage {
+        padding: 0 8px;
+    }
+
     .info {
         display: none;
+    }
+}
+
+@media (max-width: 1160px) {
+    .ArticleDetailsPage {
+        padding: 0 12px;
+    }
+}
+
+@media (max-width: 530px) {
+    .ArticleDetailsPage {
+        padding: 0 4px;
     }
 }

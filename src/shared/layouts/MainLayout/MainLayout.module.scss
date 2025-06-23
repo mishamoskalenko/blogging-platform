@@ -53,20 +53,40 @@
     }
 
     .content {
-        padding: 5px;
+        padding: 15px;
     }
 
     .sidebar {
-        padding: 5px;
+        padding: 15px;
     }
 }
 
-@media (max-width: 758px) {
+@media (max-width: 1385px) {
     .MainLayout {
         min-height: 100%;
         display: grid;
         grid-template-areas: "sidebar content rightbar";
         grid-template-columns: min-content 1fr 75px;
-        overflow-y: scroll;
+    }
+}
+
+@media (max-width: 530px) {
+    .MainLayout {
+        grid-template-areas: "sidebar content rightbar";
+        grid-template-columns: 50px 1fr 50px;
+        overflow-x: scroll;
+    }
+
+    .sidebar,
+    .rightbar {
+        max-width: 50px;
+        width: 50px;
+        padding: 8px 4px;
+        box-sizing: border-box;
+    }
+
+    .content {
+        padding: 8px 4px;
+        box-sizing: border-box;
     }
 }
