@@ -71,18 +71,6 @@
       "id": "OTPLxJD"
     },
     {
-      "articleId": "18",
-      "userId": "1",
-      "text": "Wow!",
-      "id": "NsEmsf5"
-    },
-    {
-      "articleId": "18",
-      "userId": "1",
-      "text": "Wow!",
-      "id": "_cMJvQf"
-    },
-    {
       "articleId": "2",
       "userId": "2",
       "text": "Great overview of Python 3.14 features—can't wait for the No-GIL build!",
@@ -700,12 +688,6 @@
       "articleId": "19",
       "rate": 4,
       "id": "3fOWjVE"
-    },
-    {
-      "userId": "1",
-      "articleId": "18",
-      "rate": 5,
-      "id": "RVyHClx"
     },
     {
       "userId": "1",
