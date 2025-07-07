@@ -38,7 +38,7 @@ jobs:
       id-token: write 
     strategy:
       matrix:
-        node-version: [ 17.x ]
+        node-version: [ 18.x ]
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -84,7 +84,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [ 17.x ]
+        node-version: [ 18.x ]
     permissions:
       contents: read
     steps:

@@ -11,10 +11,15 @@
     "Edit": "Edit",
     "An error occurred while loading the profile": "An error occurred while loading the profile",
     "Try refresh the page": "Try refresh the page",
-    "Profile": "Profile",
     "User data is incorrect. Please provide both first name and last name.": "User data is incorrect. Please provide both first name and last name.",
     "Age is incorrect. Please provide a valid age.": "Age is incorrect. Please provide a valid age.",
     "No data provided.": "Aucune donnée fournie. Veuillez remplir les informations du profil.",
     "A server error occurred. Please try again later.": "A server error occurred. Please try again later.",
-    "Save": "Save"
+    "Save": "Save",
+    "Name": "Name",
+    "Surname": "Surname",
+    "Age": "Age",
+    "City": "City",
+    "Username": "Username",
+    "Avatar": "Avatar"
 }

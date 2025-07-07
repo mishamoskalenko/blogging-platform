@@ -1,4 +1,4 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { StoryFn, Meta } from '@storybook/react';
 import { AppImage } from './AppImage';
 import { Icon } from '../Icon/Icon';
 import { Skeleton } from '../Skeleton';
@@ -13,9 +13,9 @@ export default {
     args: {
         to: '/',
     },
-} as ComponentMeta<typeof AppImage>;
+} as Meta<typeof AppImage>;
 
-const Template: ComponentStory<typeof AppImage> = (args) => <AppImage {...args} />;
+const Template: StoryFn<typeof AppImage> = (args) => <AppImage {...args} />;
 
 const avatarImage = 'https://i.ibb.co/B52J0x4K/image.png';
 

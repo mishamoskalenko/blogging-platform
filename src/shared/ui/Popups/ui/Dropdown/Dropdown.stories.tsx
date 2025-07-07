@@ -1,4 +1,5 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+/* eslint-disable i18next/no-literal-string */
+import { StoryFn, Meta } from '@storybook/react';
 import { Dropdown } from './Dropdown';
 import { Button } from '../../../Button/Button';
 
@@ -21,9 +22,9 @@ export default {
             </div>
         ),
     ],
-} as ComponentMeta<typeof Dropdown>;
+} as Meta<typeof Dropdown>;
 
-const Template: ComponentStory<typeof Dropdown> = (args) => <Dropdown {...args} />;
+const Template: StoryFn<typeof Dropdown> = (args) => <Dropdown {...args} />;
 
 export const DropdownBottomLeft = Template.bind({});
 DropdownBottomLeft.args = {

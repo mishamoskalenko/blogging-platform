@@ -1,22 +1,20 @@
-module.exports = {
+import type { StorybookConfig } from '@storybook/react-webpack5';
+
+const config: StorybookConfig = {
     stories: [
         '../../src/**/*.stories.@(js|jsx|ts|tsx)',
     ],
+
     addons: [
         '@storybook/addon-links',
-        {
-            name: '@storybook/addon-essentials',
-            options: {
-                backgrounds: false,
-            },
-        },
+        '@storybook/addon-essentials',
         '@storybook/addon-interactions',
         'storybook-addon-mock',
-        'storybook-addon-themes',
     ],
-    framework: '@storybook/react',
-    core: {
-        builder: 'webpack5',
+
+    framework: {
+        name: '@storybook/react-webpack5',
+        options: {},
     },
 
     webpackFinal: async (config) => {
@@ -24,13 +22,19 @@ module.exports = {
             config.entry = config.entry.filter(Boolean);
         } else if (typeof config.entry === 'object') {
             Object.keys(config.entry).forEach((key) => {
-                const value = config.entry[key];
+                const value = config.entry![key];
                 if (Array.isArray(value)) {
-                    config.entry[key] = value.filter(Boolean);
+                    config.entry![key] = value.filter(Boolean);
                 }
             });
         }
 
         return config;
     },
+
+    docs: {
+        autodocs: false,
+    },
 };
+
+export default config;

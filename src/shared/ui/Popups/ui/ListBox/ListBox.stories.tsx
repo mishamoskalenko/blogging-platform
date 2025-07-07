@@ -1,4 +1,4 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { StoryFn, Meta } from '@storybook/react';
 import { ListBox } from './ListBox';
 // eslint-disable-next-line eslint-path-plugin/layer-imports
 import { Currency } from '@/entities/Currency';
@@ -12,9 +12,9 @@ export default {
     decorators: [
         (Story) => <div style={{ padding: 50 }}><Story /></div>,
     ],
-} as ComponentMeta<typeof ListBox>;
+} as Meta<typeof ListBox>;
 
-const Template: ComponentStory<typeof ListBox> = (args) => <ListBox {...args} />;
+const Template: StoryFn<typeof ListBox> = (args) => <ListBox {...args} />;
 
 const options = [
     { value: Currency.EUR, content: Currency.EUR },

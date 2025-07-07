@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import { UserRole } from '@/entities/User';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator';
 import { AvatarDropdown } from './AvatarDropdown';
@@ -22,9 +22,9 @@ export default {
             </div>
         ),
     ],
-} as ComponentMeta<typeof AvatarDropdown>;
+} as Meta<typeof AvatarDropdown>;
 
-const Template: ComponentStory<typeof AvatarDropdown> = (args) => <AvatarDropdown {...args} />;
+const Template: StoryFn<typeof AvatarDropdown> = (args) => <AvatarDropdown {...args} />;
 
 export const Normal = Template.bind({});
 Normal.args = {};

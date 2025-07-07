@@ -1,3 +1,4 @@
+/* eslint-disable i18next/no-literal-string */
 import { memo, useLayoutEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';

@@ -33,6 +33,7 @@ const ArticleRating = memo((props: ArticleRatingProps) => {
                 feedback,
             });
         } catch (e) {
+            // eslint-disable-next-line no-console
             console.log(e);
         }
     }, [articleId, rateArticleMutation, userData?.id]);

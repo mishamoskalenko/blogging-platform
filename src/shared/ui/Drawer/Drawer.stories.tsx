@@ -1,4 +1,4 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { StoryFn, Meta } from '@storybook/react';
 import { Drawer } from './Drawer';
 import { Text } from '../Text/Text';
 import { AnimationProvider } from '@/shared/lib/components/AnimationProvider/AnimationProvider';
@@ -16,9 +16,9 @@ export default {
             </AnimationProvider>
         ),
     ],
-} as ComponentMeta<typeof Drawer>;
+} as Meta<typeof Drawer>;
 
-const Template: ComponentStory<typeof Drawer> = (args) => <Drawer {...args} />;
+const Template: StoryFn<typeof Drawer> = (args) => <Drawer {...args} />;
 
 const content = (
     <div>

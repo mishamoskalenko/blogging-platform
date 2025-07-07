@@ -1,4 +1,5 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+/* eslint-disable i18next/no-literal-string */
+import { StoryFn, Meta } from '@storybook/react';
 import { Button } from '../../../Button/Button';
 import { Popover } from './Popover';
 
@@ -21,9 +22,9 @@ export default {
             </div>
         ),
     ],
-} as ComponentMeta<typeof Popover>;
+} as Meta<typeof Popover>;
 
-const Template: ComponentStory<typeof Popover> = (args) => <Popover {...args} />;
+const Template: StoryFn<typeof Popover> = (args) => <Popover {...args} />;
 
 export const PopoverBottomLeft = Template.bind({});
 PopoverBottomLeft.args = {

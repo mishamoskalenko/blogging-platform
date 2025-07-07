@@ -14,5 +14,11 @@
     "User data is incorrect. Please provide both first name and last name.": "Les données de l'utilisateur sont incorrectes. Veuillez indiquer le prénom et le nom de famille.",
     "Age is incorrect. Please provide a valid age.": "L'âge est incorrect. Veuillez fournir un âge valide.",
     "No data provided.": "Aucune donnée n'a été fournie.",
-    "A server error occurred. Please try again later.": "Une erreur de serveur s'est produite. Veuillez réessayer plus tard."
+    "A server error occurred. Please try again later.": "Une erreur de serveur s'est produite. Veuillez réessayer plus tard.",
+    "Name": "Nom",
+    "Surname": "Prénom",
+    "Age": "Âge",
+    "City": "Ville",
+    "Username": "Nom d'utilisateur",
+    "Avatar": "Avatar"
 }
